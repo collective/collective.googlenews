@@ -17,7 +17,7 @@ setup(name='collective.googlenews',
       keywords='',
       author='JeanMichel FRANCOIS aka toutpt',
       author_email='toutpt@gmail.com',
-      url='http://svn.plone.org/svn/collective/',
+      url='git://github.com/toutpt/collective.googlenews.git',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],
@@ -25,8 +25,12 @@ setup(name='collective.googlenews',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'collective.monkeypatcher',
           # -*- Extra requirements: -*-
       ],
+      extras_require = {
+          'test': ['plone.app.testing']
+      },
       entry_points="""
       # -*- Entry points: -*-
 
