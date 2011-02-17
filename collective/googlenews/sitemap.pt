@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:tal="http://xml.zope.org/namespaces/tal">
+  <url tal:repeat="news view/news">
+    <loc tal:content="news/loc">http://www.example.org/business/article55.html</loc>
+    <news:news>
+      <news:publication>
+        <news:name tal:content="news/name">Journal L'Exemple</news:name>
+        <news:language tal:content="news/language">fr</news:language>
+      </news:publication>
+      <news:access tal:condition="news/access" tal:content="news/access">Abonnement</news:access>
+      <news:genres tal:condition="news/genres" tal:content="news/genres">CommuniquéPresse, Blog</news:genres>
+      <news:publication_date tal:content="news/publication_date">2008-12-23</news:publication_date>
+      <news:title tal:content="news/title">Entreprises A, B dans les négociations de fusion</news:title>
+      <news:keywords tal:condition="news/keywords" tal:content="news/keywords">business, fusion, acquisition, A, B</news:keywords>
+    </news:news>
+  </url>
+</urlset>

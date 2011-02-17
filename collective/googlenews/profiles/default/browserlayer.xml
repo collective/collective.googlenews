@@ -1,0 +1,4 @@
+<layers>
+    <layer name="collective.googlenews"
+           interface="collective.googlenews.interfaces.IGoogleNewsLayer" />
+</layers>

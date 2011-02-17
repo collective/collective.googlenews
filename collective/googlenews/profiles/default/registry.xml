@@ -1,0 +1,4 @@
+<registry>
+  <!-- plone.app.theming settings -->
+  <records interface="collective.googlenews.interfaces.GoogleNewsSettings" />
+</registry>
