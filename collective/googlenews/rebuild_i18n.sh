@@ -1,5 +1,5 @@
 #!/bin/sh
-PRODUCTNAME='collective.gallery'
+PRODUCTNAME='collective.googlenews'
 I18NDOMAIN=$PRODUCTNAME
 
 # Synchronise the .pot with the templates.
