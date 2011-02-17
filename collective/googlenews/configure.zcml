@@ -19,6 +19,7 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <include package="collective.monkeypatcher"/>
+  <include package="plone.app.registry"/>
   <monkey:patch
      description="No other way than monkeypatch to add digits to id on News Item"
      class="Products.Archetypes.BaseObject.BaseObject"

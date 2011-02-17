@@ -2,6 +2,7 @@ from datetime import date
 from zope import component
 from Products.Five import BrowserView
 from DateTime import DateTime
+
 class GoogleNewsSiteMap(BrowserView):
     """Google News sitemap view generate an xml file you can submit to google
     news services to have greater refresh news"""
@@ -9,15 +10,18 @@ class GoogleNewsSiteMap(BrowserView):
     def __init__(self, context, request):
         self.context = context
         self.request = request
-        self.state = component.getMultiAdapter((self.context, self.request),name="plone_portal_state")
+        self.state = component.getMultiAdapter((self.context, self.request),
+                                               name="plone_portal_state")
 
     def news(self):
         constraints = {'sort_limit':1000,
                       'sort_on':'effective', 'sort_order':'reverse',
-                      'effective': {'query': (DateTime()-2, DateTime()), 'range': 'min:max'}
+                      'effective': {'query': (DateTime()-2, DateTime()),
+                                    'range': 'min:max'}
                       } #<1000 URLS and published in the last two days.
         brains = self.context.queryCatalog(**constraints)
-        news = [self.brain2news(brain, name=self.state.portal_title) for brain in brains]
+        news = [self.brain2news(brain, name=self.state.portal_title) \
+                for brain in brains]
         return news
 
     def brain2news(self, brain, name=""):

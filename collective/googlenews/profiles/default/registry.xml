@@ -1,4 +1,7 @@
 <registry>
   <!-- plone.app.theming settings -->
   <records interface="collective.googlenews.interfaces.GoogleNewsSettings" />
+  <record name="collective.googlenews.interfaces.GoogleNewsSettings.portal_types">
+    <value>News Item</value>
+  </record>
 </registry>
