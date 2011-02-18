@@ -26,7 +26,7 @@ setup(name='collective.googlenews',
       install_requires=[
           'setuptools',
           'collective.monkeypatcher',
-          'plone.app.registry',
+#BBB plone3          'plone.app.registry',
           # -*- Extra requirements: -*-
       ],
       extras_require = {
