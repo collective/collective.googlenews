@@ -14,4 +14,9 @@ class GoogleNewsSettings(interface.Interface):
                                value_type=schema.ASCIILine(title=i18n.portal_type_title))
 
 
-from Products.ATContentTypes.interfaces import IATNewsItem as INewsItem
+try:
+    from Products.ATContentTypes.interfaces import IATTopic
+    from Products.ATContentTypes.interfaces import IATNewsItem as INewsItem
+except ImportError, e:
+    from Products.ATContentTypes.interface import IATTopic
+    from Products.ATContentTypes.interface import IATNewsItem as INewsItem

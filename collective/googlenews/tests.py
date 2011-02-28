@@ -1,5 +1,6 @@
 import unittest2 as unittest
 from collective.googlenews.testing import INTEGRATION_TESTING
+from collective.googlenews import sitemap
 from plone.registry.interfaces import IRegistry
 from plone.browserlayer.interfaces import ILocalBrowserLayerType
 from zope import component
@@ -45,3 +46,14 @@ class IntegrationTest(unittest.TestCase):
 
     def test_sitemap(self):
         portal = self.layer['portal']
+        setRoles(portal, TEST_USER_ID, ['Manager'])
+        login(portal, TEST_USER_NAME)
+        portal.invokeFactory('Topic', 'news', title=u"News")
+        portal.news.addCriterion('Type','ATPortalTypeCriterion')
+        portal.news.crit__Type_ATPortalTypeCriterion.setValue(['News Item'])
+        self.failUnless(len(portal.news.queryCatalog())==0)
+        portal.invokeFactory('News Item', 'newsid', title=u"Page 1")
+        self.failUnless(len(portal.news.queryCatalog())==1)
+        view = sitemap.GoogleNewsSiteMap(portal.news, self.layer['request'])
+        self.failUnless(len(view.news())==1)
+        

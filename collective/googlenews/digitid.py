@@ -1,18 +1,31 @@
 import random
+from Acquisition import aq_base
+from collective.googlenews import interfaces
+from plone.app.content import namechooser
 from zope import component
 from zope import interface
-from plone.registry.interfaces import IRegistry
-from collective.googlenews import interfaces
+try:
+    from plone.registry.interfaces import IRegistry
+    from plone.app.content.interfaces import INameFromTitle
+except ImportError, e:
+    class IRegistry(interface.Interface):
+        pass
+    class INameFromTitle(interface.Interface):
+        pass
+
 
 def randomid():
     return str(random.randint(100, 9999))+'.html'
 
 def generateNewId(self):
     #TODO: check the add-on is installed (request/browserlayer)
-    registry = component.getUtility(IRegistry)
+    registry = component.queryUtility(IRegistry, None)
     newid = self._old_generateNewId()
     try:
-        portal_types = registry['collective.googlenews.interfaces.IGoogleNewsSettings.portal_types']
+        if registry:
+            portal_types = registry['collective.googlenews.interfaces.IGoogleNewsSettings.portal_types']
+        else:
+            portal_types = ['News Item']
     except KeyError, e:
         portal_types = ['News Item']
     if getattr(self,'portal_type') in portal_types:
@@ -20,8 +33,6 @@ def generateNewId(self):
             newid += randomid()
     return newid
 
-from plone.app.content import namechooser
-from Acquisition import aq_base
 
 class NameFromTitle(object):
     """Name chooser to fit google news constraints"""
