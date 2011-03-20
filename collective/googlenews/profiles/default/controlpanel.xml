@@ -12,7 +12,7 @@
         category="Products"
         condition_expr=""
         url_expr="string:${portal_url}/@@googlenews-controlpanel"
-        icon_expr=""
+        icon_expr="string:${portal_url}/++resource++googlenews.png"
         visible="True"
         i18n:attributes="title;description">
             <permission>Manage portal</permission>

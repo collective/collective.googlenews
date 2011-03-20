@@ -45,5 +45,8 @@
     permission="cmf.ManagePortal"
     layer=".interfaces.IGoogleNewsLayer"
     />
-
+  <browser:resource
+    name="googlenews.png"
+    file="controlpanel.png"
+    />
 </configure>
