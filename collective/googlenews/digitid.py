@@ -15,12 +15,17 @@ except ImportError, e:
 
 
 def randomid():
-    return str(random.randint(100, 9999))+'.html'
+    return '-'+str(random.randint(100, 9999))+'.html'
 
 def generateNewId(self):
-    #TODO: check the add-on is installed (request/browserlayer)
-    registry = component.queryUtility(IRegistry, None)
     newid = self._old_generateNewId()
+    request = getattr(self, 'REQUEST', None)
+    if request is not None:
+        if not interfaces.IGoogleNewsLayer.providedBy(request):
+            #the addon is not activated -> stay on old way to generate ids
+            return newid
+    #the addon is activate, check the content type
+    registry = component.queryUtility(IRegistry, None)
     try:
         if registry:
             portal_types = registry['collective.googlenews.interfaces.IGoogleNewsSettings.portal_types']

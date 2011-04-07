@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0dev'
+version = '1.0b1dev'
 
 setup(name='collective.googlenews',
       version=version,
@@ -26,7 +26,7 @@ setup(name='collective.googlenews',
       install_requires=[
           'setuptools',
           'collective.monkeypatcher',
-#BBB plone3          'plone.app.registry',
+          'plone.app.registry',
           # -*- Extra requirements: -*-
       ],
       extras_require = {

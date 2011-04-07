@@ -20,9 +20,14 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <include package="collective.monkeypatcher"/>
-  <configure zcml:condition="installed plone.app.registry">
-    <include package="plone.app.registry"/>
-  </configure>
+  <include package="plone.app.registry"/>
+  <browser:page
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    name="googlenews-controlpanel"
+    class=".controlpanel.ControlPanelView"
+    permission="cmf.ManagePortal"
+    layer=".interfaces.IGoogleNewsLayer"
+    />
   <monkey:patch
      description="No other way than monkeypatch to add digits to id on News Item"
      class="Products.Archetypes.BaseObject.BaseObject"
@@ -36,13 +41,6 @@
     class=".sitemap.GoogleNewsSiteMap"
     template="sitemap.pt"
     permission="zope2.View"
-    layer=".interfaces.IGoogleNewsLayer"
-    />
-  <browser:page zcml:condition="installed plone.app.registry"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    name="googlenews-controlpanel"
-    class=".controlpanel.ControlPanelView"
-    permission="cmf.ManagePortal"
     layer=".interfaces.IGoogleNewsLayer"
     />
   <browser:resource
