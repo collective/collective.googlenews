@@ -1,8 +1,8 @@
 Introduction
 ============
 
-GoogleNews_ service has some technical requirements. This add-on solve some issues
-and let Plone be GoogleNews_ ready.
+GoogleNews_ service has some technical requirements. This add-on solve the only issues
+Plone have regarding these constraints. Lets Plone be GoogleNews_ ready.
 
 Technical requirements can be found at http://www.google.com/support/news_pub/bin/topic.py?hl=en&topic=11665
 
@@ -16,7 +16,7 @@ SiteMap
 =======
 
 This add-on add a @@googlenews-sitemap.xml view for topic content type. This 
-view add some checks:
+view add some checks before loading items:
 
 * no more than 1000 items returned
 * items must have been published in the last two days
@@ -24,3 +24,11 @@ view add some checks:
 
 So you don't need to add criteria for these, but types
 should be set to News Item to be sure you are publishing news.
+
+How to publish my website into google news ?
+============================================
+
+You need to have a topic instance in your website. By default in Plone /news/aggregator 
+is the one. In the process you can provide the sitemap to help google to get the 
+last news by providing the url example.com/news/aggregator/@@googlenews-sitemap.xml
+
