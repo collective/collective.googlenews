@@ -19,7 +19,6 @@
       />
   <!-- -*- extra stuff goes here -*- -->
 
-  <include package="collective.monkeypatcher"/>
   <include package="plone.app.registry"/>
   <browser:page
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"

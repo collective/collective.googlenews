@@ -40,7 +40,6 @@ def generateNewId(self):
 class NameFromTitle(object):
     """Name chooser to fit google news constraints"""
     interface.implements(INameFromTitle)
-    component.adapts(interfaces.INewsItem)
 
     def __init__(self, context):
         self.context = context
