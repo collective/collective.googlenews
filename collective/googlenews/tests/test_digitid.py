@@ -7,8 +7,18 @@ class Test(base.UnitTestCase):
 #        from collective.gallery import core
 #        self.view = core.BaseBrowserView(self.context, self.request)
 
-    def testToto(self):
-        self.assertEqual("a", "a title")
+    def test_randomid(self):
+        from collective.googlenews import digitid
+        id = digitid.randomid()
+        #check common rule
+        self.failUnless(id.startswith('-'))
+        self.failUnless(id.endswith('.html'))
+        #check on with 1000 ids
+        digits = [digitid.randomid()[1:-5] for i in range(1000)]
+        for digit in digits:
+            self.failUnless(digit.isdigit())
+            self.failUnless(len(digit)>2)
+            self.failUnless(len(digit)<5)
 
 class TestIntegration(base.TestCase):
     
