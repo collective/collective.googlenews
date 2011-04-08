@@ -10,23 +10,24 @@ class GoogleNewsSiteMap(BrowserView):
     def __init__(self, context, request):
         self.context = context
         self.request = request
-        self.state = component.getMultiAdapter((self.context, self.request),
-                                               name="plone_portal_state")
+        self._state = None
 
     def news(self):
+        state = self.state()
         constraints = {'sort_limit':1000,
                       'sort_on':'effective', 'sort_order':'reverse',
                       'effective': {'query': (DateTime()-2, DateTime()),
                                     'range': 'min:max'}
                       } #<1000 URLS and published in the last two days.
         brains = self.context.queryCatalog(**constraints)
-        news = [self.brain2news(brain, name=self.state.portal_title) \
+        news = [self.brain2news(brain, name=state.portal_title) \
                 for brain in brains]
         return news
 
     def brain2news(self, brain, name=""):
+        state = self.state()
         #get language and check googlenews language constraints
-        language = self.state.language()
+        language = state.language()
         if len(language)>2 and language not in ('zh-cn', 'zh-tw'):
             language = language[0:2]
         #date format must be AAAA-MM-JJ
@@ -41,3 +42,9 @@ class GoogleNewsSiteMap(BrowserView):
                 'publication_date':d,
                 'title':brain.Title,
                 'keywords':keywords}
+
+    def state(self):
+        if self._state is not None: return self._state
+        self._state = component.getMultiAdapter((self.context, self.request),
+                               name="plone_portal_state")
+        return self._state

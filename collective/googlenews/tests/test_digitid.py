@@ -43,8 +43,3 @@ class Test(base.UnitTestCase):
         self.failUnless(digit.isdigit())
         self.failUnless(len(digit)>2)
         self.failUnless(len(digit)<5)
-
-class TestIntegration(base.TestCase):
-    
-    def testProperties(self):
-        pass
