@@ -49,6 +49,7 @@ class FunctionalTestCase(unittest.TestCase):
         testing.setRoles(self.portal, testing.TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 
+
 def build_test_suite(test_classes):
     suite = unittest.TestSuite()
     for klass in test_classes:

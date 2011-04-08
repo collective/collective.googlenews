@@ -8,10 +8,9 @@ class Test(base.UnitTestCase):
 #        self.view = core.BaseBrowserView(self.context, self.request)
 
     def testToto(self):
-        self.assertEqual("a", "a title")
+        pass
 
 class TestIntegration(base.TestCase):
     
     def testProperties(self):
-        from collective.googlenews import controlpanel
-        self.failUnless(1 == 400)
+        pass

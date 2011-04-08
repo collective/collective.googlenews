@@ -20,8 +20,31 @@ class Test(base.UnitTestCase):
             self.failUnless(len(digit)>2)
             self.failUnless(len(digit)<5)
 
+    def test_generateNewId(self):
+        self.context.REQUEST = self.requestNoLayer
+        id = self.context.generateNewId()
+        self.failUnless(id=='a-title')
+        self.context.REQUEST = self.request
+        id = self.context.generateNewId()
+        self.failUnless(id.startswith('a-title-'))
+        self.failUnless(id.endswith('.html'))
+        digit = id[len('a-title-'):-5]
+        self.failUnless(digit.isdigit())
+        self.failUnless(len(digit)>2)
+        self.failUnless(len(digit)<5)
+
+    def test_nameFromTitle(self):
+        from collective.googlenews import digitid
+        adapter = digitid.NameFromTitle(self.context)
+        id = adapter.title
+        self.failUnless(id.startswith('a title-'))
+        self.failUnless(id.endswith('.html'))
+        digit = id[len('a title-'):-5]
+        self.failUnless(digit.isdigit())
+        self.failUnless(len(digit)>2)
+        self.failUnless(len(digit)<5)
+
 class TestIntegration(base.TestCase):
     
     def testProperties(self):
-        from collective.googlenews import digitid
-        self.failUnless(1 == 400)
+        pass

@@ -20,10 +20,8 @@ def randomid():
 def generateNewId(self):
     newid = self._old_generateNewId()
     request = getattr(self, 'REQUEST', None)
-    if request is not None:
-        if not interfaces.IGoogleNewsLayer.providedBy(request):
-            #the addon is not activated -> stay on old way to generate ids
-            return newid
+    if not interfaces.IGoogleNewsLayer.providedBy(request):
+        return newid
     #the addon is activate, check the content type
     registry = component.queryUtility(IRegistry, None)
     try:
@@ -49,8 +47,5 @@ class NameFromTitle(object):
 
     @property
     def title(self):
-        id = aq_base.getId()
-        title = getattr(aq_base(object), 'id', None)
-        title += randomid()
-        return title
+        return self.context.Title() + randomid()
 
