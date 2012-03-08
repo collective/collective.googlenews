@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from collective.googlenews.tests import base
 
+
 class Test(base.UnitTestCase):
-    
+
     def setUp(self):
         super(Test, self).setUp()
 #        from collective.gallery import core
@@ -17,21 +20,21 @@ class Test(base.UnitTestCase):
         digits = [digitid.randomid()[1:-5] for i in range(1000)]
         for digit in digits:
             self.failUnless(digit.isdigit())
-            self.failUnless(len(digit)>2)
-            self.failUnless(len(digit)<5)
+            self.failUnless(len(digit) > 2)
+            self.failUnless(len(digit) < 5)
 
     def test_generateNewId(self):
         self.context.REQUEST = self.requestNoLayer
         id = self.context.generateNewId()
-        self.failUnless(id=='a-title')
+        self.failUnless(id == 'a-title')
         self.context.REQUEST = self.request
         id = self.context.generateNewId()
         self.failUnless(id.startswith('a-title-'))
         self.failUnless(id.endswith('.html'))
         digit = id[len('a-title-'):-5]
         self.failUnless(digit.isdigit())
-        self.failUnless(len(digit)>2)
-        self.failUnless(len(digit)<5)
+        self.failUnless(len(digit) > 2)
+        self.failUnless(len(digit) < 5)
 
     def test_nameFromTitle(self):
         from collective.googlenews import digitid
@@ -41,5 +44,5 @@ class Test(base.UnitTestCase):
         self.failUnless(id.endswith('.html'))
         digit = id[len('a title-'):-5]
         self.failUnless(digit.isdigit())
-        self.failUnless(len(digit)>2)
-        self.failUnless(len(digit)<5)
+        self.failUnless(len(digit) > 2)
+        self.failUnless(len(digit) < 5)
