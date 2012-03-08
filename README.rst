@@ -8,8 +8,8 @@ Introduction
 ============
 
 `Google News`_ service has some technical requirements. This add-on solve the
-only issues Plone have regarding these constraints. Lets Plone be `Google News`_
-ready.
+only issues Plone have regarding these constraints. Let's Plone be `Google
+News`_ ready.
 
 Technical requirements can be found at
 http://www.google.com/support/news_pub/bin/topic.py?hl=en&topic=11665
