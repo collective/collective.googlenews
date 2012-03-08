@@ -1,7 +1,13 @@
 Changelog
 =========
 
-1.0b1 (unreleased)
-----------------------
+1.0b2 (2011-04-11)
+------------------
+
+- Check random digit doesn't starts with 199 or 200
+
+1.0b1 (2011-04-08)
+------------------
 
 - Initial release
+
