@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.0b3 (unreleased)
+----------------------
+
+- Added some real tests to fix some stuff [hvelarde]
+
+- Updated package and fixed distribution information [hvelarde]
+
 1.0b2 (2011-04-11)
 ------------------
 
