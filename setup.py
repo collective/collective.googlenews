@@ -6,7 +6,7 @@ version = '1.0b1dev'
 setup(name='collective.googlenews',
       version=version,
       description="Make easy to add your Plone site to Google News.",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Development Status :: 4 - Beta",
