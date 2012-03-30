@@ -8,7 +8,9 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.googlenews">
 
-  <five:registerPackage package="." initialize=".initialize" />
+  <five:registerPackage package="." />
+  <i18n:registerTranslations directory="locales" />
+  <includeDependencies package="." />
 
   <genericsetup:registerProfile
       name="default"
@@ -17,16 +19,14 @@
       description="Installs the collective.googlenews package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  <!-- -*- extra stuff goes here -*- -->
 
-  <include package="plone.app.registry"/>
   <browser:page
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     name="googlenews-controlpanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
     class=".controlpanel.ControlPanelView"
     permission="cmf.ManagePortal"
-    layer=".interfaces.IGoogleNewsLayer"
     />
+
   <monkey:patch
      description="No other way than monkeypatch to add digits to id on News Item"
      class="Products.Archetypes.BaseObject.BaseObject"
@@ -34,6 +34,7 @@
      replacement=".digitid.generateNewId"
      preserveOriginal="true"
      />
+
   <browser:page
     for="Products.ATContentTypes.interfaces.IATTopic"
     name="googlenews-sitemap.xml"
@@ -42,8 +43,10 @@
     permission="zope2.View"
     layer=".interfaces.IGoogleNewsLayer"
     />
+
   <browser:resource
     name="googlenews.png"
     file="controlpanel.png"
     />
+
 </configure>

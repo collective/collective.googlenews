@@ -1,14 +1,20 @@
-from zope import interface
+# -*- coding: utf-8 -*-
+
 from zope import schema
+from zope.interface import Interface
 
-from collective.googlenews import i18n
+from collective.googlenews import _
 
-class IGoogleNewsLayer(interface.Interface):
-    """browser layer for this addon"""
 
-class GoogleNewsSettings(interface.Interface):
+class IGoogleNewsLayer(Interface):
+    """Browser layer for this addon"""
+
+
+class GoogleNewsSettings(Interface):
     """Settings site wide of this addon"""
-    
-    portal_types = schema.List(title=i18n.portal_types_title,
-                               description=i18n.portal_types_desc,
-                               value_type=schema.ASCIILine(title=i18n.portal_type_title))
+
+    portal_types = schema.List(
+        title=_(u"Portal types"),
+        description=_(u"add portal types you want to apply digit id"),
+        value_type=schema.ASCIILine(title=_(u"Portal type")),
+        )

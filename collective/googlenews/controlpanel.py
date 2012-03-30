@@ -1,13 +1,18 @@
-from plone.app.registry.browser import controlpanel as base
-from plone.z3cform import layout
+# -*- coding: utf-8 -*-
 
-from collective.googlenews import interfaces
-from collective.googlenews import i18n
+from plone.app.registry.browser import controlpanel as base
+
+from collective.googlenews import _
+from collective.googlenews.interfaces import GoogleNewsSettings
+
 
 class SettingsEditForm(base.RegistryEditForm):
 
-    schema = interfaces.GoogleNewsSettings
-    label = i18n.controlpanel_label
-    description = i18n.controlpanel_desc
+    schema = GoogleNewsSettings
+    label = _(u"Google News Settings")
+    description = _(u"controlpanel_desc",
+                    default=u"You can configure the settings of collective.googlenews add-on")
 
-ControlPanelView = layout.wrap_form(SettingsEditForm, base.ControlPanelFormWrapper)
+
+class ControlPanelView(base.ControlPanelFormWrapper):
+    form = SettingsEditForm

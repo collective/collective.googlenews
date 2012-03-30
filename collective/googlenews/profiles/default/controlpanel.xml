@@ -6,7 +6,6 @@
 
     <configlet
         title="Google News Settings"
-        description="controlpanel_desc"
         action_id="collective.googlenews.settings"
         appId="collective.googlenews"
         category="Products"
@@ -14,7 +13,7 @@
         url_expr="string:${portal_url}/@@googlenews-controlpanel"
         icon_expr="string:${portal_url}/++resource++googlenews.png"
         visible="True"
-        i18n:attributes="title;description">
+        i18n:attributes="title">
             <permission>Manage portal</permission>
     </configlet>
 </object>
