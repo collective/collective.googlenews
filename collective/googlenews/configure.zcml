@@ -16,7 +16,15 @@
       name="default"
       title="collective.googlenews"
       directory="profiles/default"
-      description="Installs the collective.googlenews package"
+      description="Installs the collective.googlenews package."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.googlenews uninstall"
+      directory="profiles/uninstall"
+      description="Uninstall profile for the collective.googlenews package."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

@@ -7,6 +7,7 @@ from plone.app.testing import setRoles
 
 from plone.browserlayer.utils import registered_layers
 
+from collective.googlenews.config import PROJECTNAME
 from collective.googlenews.testing import INTEGRATION_TESTING
 
 
@@ -19,7 +20,7 @@ class InstallTestCase(unittest.TestCase):
 
     def test_installed(self):
         qi = self.portal['portal_quickinstaller']
-        self.assertTrue(qi.isProductInstalled('collective.googlenews'),
+        self.assertTrue(qi.isProductInstalled(PROJECTNAME),
                         'package not installed')
 
     def test_browserlayer_installed(self):
@@ -36,10 +37,10 @@ class UninstallTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.qi = self.portal['portal_quickinstaller']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.qi.uninstallProducts(products=['collective.googlenews'])
+        self.qi.uninstallProducts(products=[PROJECTNAME])
 
     def test_uninstalled(self):
-        self.assertFalse(self.qi.isProductInstalled('collective.googlenews'),
+        self.assertFalse(self.qi.isProductInstalled(PROJECTNAME),
                          'package not uninstalled')
 
     def test_browserlayer_removed(self):

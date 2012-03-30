@@ -2,4 +2,6 @@
 
 from zope.i18nmessageid import MessageFactory
 
-_ = MessageFactory("collective.googlenews")
+from collective.googlenews.config import PROJECTNAME
+
+_ = MessageFactory(PROJECTNAME)
