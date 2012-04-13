@@ -33,13 +33,17 @@ def generateNewId(self, name=None, object=None):
     if not interfaces.IGoogleNewsLayer.providedBy(request):
         return newid
     #the addon is activate, check the content type
-    settings = getUtility(IRegistry).forInterface(GoogleNewsSettings, False)
+    registry = component.queryUtility(IRegistry, None)
     try:
-        if hasattr(settings, 'portal_types'):
-            portal_types = settings.portal_types
+        if registry:
+            settings = registry.forInterface(GoogleNewsSettings, False)
+            if hasattr(settings, 'portal_types'):
+                portal_types = settings.portal_types
+            else:
+                portal_types = ['News Item']
         else:
             portal_types = ['News Item']
-    except KeyError, e:
+    except:
         portal_types = ['News Item']
     if getattr(self,'portal_type') in portal_types:
         if newid is not None:
