@@ -42,6 +42,14 @@
      replacement=".digitid.generateNewId"
      preserveOriginal="true"
      />
+  
+     <monkey:patch
+        description="add digits to id on Dexterity CT (we already use it for AT)"
+        class="plone.app.content.namechooser.NormalizingNameChooser"
+        original="chooseName"
+        replacement=".digitid.generateNewId"
+        preserveOriginal="true"
+        />
 
   <browser:page
     for="Products.ATContentTypes.interfaces.IATTopic"

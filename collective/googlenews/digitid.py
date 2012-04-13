@@ -1,9 +1,13 @@
 import random
 from Acquisition import aq_base
-from collective.googlenews import interfaces
-from plone.app.content import namechooser
+
 from zope import component
 from zope import interface
+from zope.component import getMultiAdapter, getUtility
+
+from collective.googlenews import interfaces
+from collective.googlenews.interfaces import GoogleNewsSettings
+
 try:
     from plone.registry.interfaces import IRegistry
     from plone.app.content.interfaces import INameFromTitle
@@ -17,16 +21,22 @@ except ImportError, e:
 def randomid():
     return '-'+str(random.randint(100, 9999))+'.html'
 
-def generateNewId(self):
-    newid = self._old_generateNewId()
-    request = getattr(self, 'REQUEST', None)
+def generateNewId(self, name=None, object=None):
+    #its a dexterity ct
+    if hasattr(self, '_old_chooseName'):
+        newid = self._old_chooseName(name, object)
+        request = getattr(self.context, 'REQUEST', None)
+        self = object
+    else:
+        newid = self._old_generateNewId()
+        request = getattr(self, 'REQUEST', None)
     if not interfaces.IGoogleNewsLayer.providedBy(request):
         return newid
     #the addon is activate, check the content type
-    registry = component.queryUtility(IRegistry, None)
+    settings = getUtility(IRegistry).forInterface(GoogleNewsSettings, False)
     try:
-        if registry:
-            portal_types = registry['collective.googlenews.interfaces.IGoogleNewsSettings.portal_types']
+        if hasattr(settings, 'portal_types'):
+            portal_types = settings.portal_types
         else:
             portal_types = ['News Item']
     except KeyError, e:
@@ -47,4 +57,3 @@ class NameFromTitle(object):
     @property
     def title(self):
         return self.context.Title() + randomid()
-
