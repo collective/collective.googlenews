@@ -18,9 +18,9 @@ class FakeContext(object):
     def _old_generateNewId(self):
         return 'a-title'
 
-    def generateNewId(self):
+    def generateNewId(self, name=None, object=None):
         from collective.googlenews import digitid
-        newid = digitid.generateNewId(self)
+        newid = digitid.generateNewId(self, name, object)
         return newid
 
     def getId(self):
@@ -106,3 +106,21 @@ class FakePlonePortalState(object):
 
     def language(self):
         return self.lang
+
+class FakeDexterityContext(FakeContext):
+    
+    def __init__(self):
+        self.portal_type = 'News Item'
+        self.id = "myid"
+        self.title = "a title"
+        self.description = "a description"
+        self.creators = ["myself"]
+        self.date="a date"
+        self.aq_inner = FakeAcquisition()
+        self.aq_inner.aq_explicit = self
+        self.context = self
+        self._modified = "modified date"
+    
+    def _old_chooseName(self, name, object):
+        return 'dex-title'
+    

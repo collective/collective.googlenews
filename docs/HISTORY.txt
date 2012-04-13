@@ -4,6 +4,12 @@ Changelog
 1.0b3 (unreleased)
 ----------------------
 
+- Added dexterity Content type support
+
+
+1.0b3 (unreleased)
+----------------------
+
 - Added Spanish and Brazilian Portuguese translations [hvelarde]
 
 - Added some real tests to fix some stuff [hvelarde]

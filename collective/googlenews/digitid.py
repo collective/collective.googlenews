@@ -26,7 +26,6 @@ def generateNewId(self, name=None, object=None):
     if hasattr(self, '_old_chooseName'):
         newid = self._old_chooseName(name, object)
         request = getattr(self.context, 'REQUEST', None)
-        self = object
     else:
         newid = self._old_generateNewId()
         request = getattr(self, 'REQUEST', None)
@@ -35,17 +34,16 @@ def generateNewId(self, name=None, object=None):
     #the addon is activate, check the content type
     registry = component.queryUtility(IRegistry, None)
     try:
+        portal_types = ['News Item']
         if registry:
             settings = registry.forInterface(GoogleNewsSettings, False)
             if hasattr(settings, 'portal_types'):
                 portal_types = settings.portal_types
-            else:
-                portal_types = ['News Item']
-        else:
-            portal_types = ['News Item']
     except:
         portal_types = ['News Item']
-    if getattr(self,'portal_type') in portal_types:
+    if not object:
+        object = self
+    if getattr(object,'portal_type') in portal_types:
         if newid is not None:
             newid += randomid()
     return newid

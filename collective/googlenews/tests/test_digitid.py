@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from collective.googlenews.tests import base
-
+from collective.googlenews.tests import base, utils
 
 class Test(base.UnitTestCase):
 
@@ -32,6 +31,20 @@ class Test(base.UnitTestCase):
         self.failUnless(id.startswith('a-title-'))
         self.failUnless(id.endswith('.html'))
         digit = id[len('a-title-'):-5]
+        self.failUnless(digit.isdigit())
+        self.failUnless(len(digit) > 2)
+        self.failUnless(len(digit) < 5)
+    
+    def test_dexterity_generateNewId(self):
+        self.context = utils.FakeDexterityContext()
+        self.context.REQUEST = self.requestNoLayer
+        id = self.context.generateNewId(None, self.context)
+        self.failUnless(id == 'dex-title')
+        self.context.REQUEST = self.request
+        id = self.context.generateNewId(None, self.context)
+        self.failUnless(id.startswith('dex-title-'))
+        self.failUnless(id.endswith('.html'))
+        digit = id[len('dex-title-'):-5]
         self.failUnless(digit.isdigit())
         self.failUnless(len(digit) > 2)
         self.failUnless(len(digit) < 5)
