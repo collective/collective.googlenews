@@ -4,21 +4,25 @@ Changelog
 1.0b3 (unreleased)
 ----------------------
 
-- Added Dexterity content types support (fixes #2) [flecox]
+- Tested Plone 4.2 compatibility. [hvelarde]
 
-- Added Spanish and Brazilian Portuguese translations [hvelarde]
+- Added support for Dexterity content types (fixes #2). [flecox]
 
-- Added some real tests to fix some stuff [hvelarde]
+- Added Spanish and Brazilian Portuguese translations. [hvelarde]
 
-- Updated bootstrap.py, package information and distribution files [hvelarde]
+- Added some real tests to fix some stuff. [hvelarde]
+
+- Updated package distribution files. [hvelarde]
+
 
 1.0b2 (2011-04-11)
 ------------------
 
-- Check random digit doesn't starts with 199 or 200
+- Check random digit doesn't starts with 199 or 200.
+
 
 1.0b1 (2011-04-08)
 ------------------
 
-- Initial release
+- Initial release.
 
