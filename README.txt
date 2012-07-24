@@ -7,12 +7,20 @@ collective.googlenews
 Introduction
 ============
 
-`Google News`_ service has some technical requirements. This add-on solve the
-only issues Plone have regarding these constraints. Let's Plone be `Google
-News`_ ready.
+`Google News`_ is compiled solely by a computer algorithm that scans all the
+sites included in their system. In order for your content to be included in
+`Google News`_, the layout and format of your site must be easy for their
+crawler to read and decipher. Additionally, they have certain restrictions in
+place to make sure their crawler only includes links to URLs that are actually
+news articles.
 
-Technical requirements can be found at
-http://www.google.com/support/news_pub/bin/topic.py?hl=en&topic=11665
+Google asks that you to review all of their guidelines before submitting your
+site for inclusion in `Google News`_. Making sure your site conforms to all
+their `technical requirements`_ now will help prevent any issues with your
+site in the future.
+
+This package helps you make your Plone site comply with these `technical
+requirements`_.
 
 Article URLs
 ============
@@ -42,3 +50,5 @@ help google to get the last news by providing the url
 example.com/news/aggregator/@@googlenews-sitemap.xml
 
 .. _`Google News`: https://news.google.com/
+.. _`technical requirements`: https://support.google.com/news/publisher/bin/answer.py?answer=2481358&topic=2481296
+
