@@ -14,9 +14,9 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="collective.googlenews"
+      title="Support for Google News"
       directory="profiles/default"
-      description="Installs the collective.googlenews package."
+      description="To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
@@ -24,7 +24,7 @@
       name="uninstall"
       title="collective.googlenews uninstall"
       directory="profiles/uninstall"
-      description="Uninstall profile for the collective.googlenews package."
+      description="Removes support for Google News from your site."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
@@ -42,7 +42,7 @@
      replacement=".digitid.generateNewId"
      preserveOriginal="true"
      />
-  
+
      <monkey:patch
         description="add digits to id on Dexterity CT (we already use it for AT)"
         class="plone.app.content.namechooser.NormalizingNameChooser"

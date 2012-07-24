@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.googlenews 1.0\n"
-"POT-Creation-Date: 2012-07-24 14:33+0000\n"
-"PO-Revision-Date: 2012-03-08 18:59-0300\n"
+"POT-Creation-Date: 2012-07-24 15:04+0000\n"
+"PO-Revision-Date: 2012-07-24 12:08-0300\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <https://github.com/collective>\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,22 @@ msgstr "Configuração do Google News"
 #: collective/googlenews/interfaces.py:17
 msgid "Portal types"
 msgstr "Tipos de conteúdo"
+
+#: Profile description in configure.zcml
+msgid "Removes support for Google News from your site."
+msgstr "Remove o suporte pelo Google News do seu site."
+
+#: Profile title in configure.zcml
+msgid "Support for Google News"
+msgstr "Suporte pelo Google News"
+
+#: Profile description in configure.zcml
+msgid "To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
+msgstr "Para incluir um site no Google News você precisa cumprir com certos requerimentos técnicos. Este pacote proporciona esse suporte."
+
+#: Profile title in configure.zcml
+msgid "collective.googlenews uninstall"
+msgstr "Remove collective.googlenews"
 
 #. Default: "You can configure the settings of collective.googlenews add-on"
 #: collective/googlenews/controlpanel.py:13

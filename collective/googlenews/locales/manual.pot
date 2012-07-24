@@ -12,3 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Domain: collective.googlenews\n"
+
+#: Profile title in configure.zcml
+msgid "Support for Google News"
+msgstr ""
+
+#: Profile description in configure.zcml
+msgid "To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
+msgstr ""
+
+#: Profile title in configure.zcml
+msgid "collective.googlenews uninstall"
+msgstr ""
+
+#: Profile description in configure.zcml
+msgid "Removes support for Google News from your site."
+msgstr ""
