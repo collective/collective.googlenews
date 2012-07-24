@@ -31,7 +31,7 @@ msgid "Portal types"
 msgstr ""
 
 #: ./i18n.py:7
-msgid "add portal types you want to apply digit id"
+msgid "Add portal types you want to apply digit id."
 msgstr ""
 
 #. Default: "You can configure the settings of collective.googlenews add-on"

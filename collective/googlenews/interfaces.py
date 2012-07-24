@@ -15,6 +15,6 @@ class GoogleNewsSettings(Interface):
 
     portal_types = schema.List(
         title=_(u"Portal types"),
-        description=_(u"add portal types you want to apply digit id"),
-        value_type=schema.ASCIILine(title=_(u"Portal type")),
+        description=_(u"Add portal types you want to apply digit id."),
+        value_type=schema.Choice(vocabulary=u'plone.app.vocabularies.UserFriendlyTypes'),
         )
