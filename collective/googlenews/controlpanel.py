@@ -13,6 +13,10 @@ class SettingsEditForm(base.RegistryEditForm):
     description = _(u"controlpanel_desc",
                     default=u"You can configure the settings of collective.googlenews add-on")
 
+    def updateWidgets(self):
+        super(SettingsEditForm, self).updateWidgets()
+        self.widgets['portal_types'].style = u'min-width: 200px;'
+
 
 class ControlPanelView(base.ControlPanelFormWrapper):
     form = SettingsEditForm

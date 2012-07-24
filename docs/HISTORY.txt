@@ -4,7 +4,12 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Control panel widget was replaced; we use now Choice instead of ASCIILine
+  (fixes `#3`_). [hvelarde]
+
+- Updated Spanish and Brazilian Portuguese translations. [hvelarde]
+
+- Updated package documentation. [hvelarde]
 
 
 1.0rc1 (2012-05-11)
@@ -33,4 +38,5 @@ Changelog
 - Initial release.
 
 .. _`#2`: https://github.com/collective/collective.googlenews/issues/2
+.. _`#3`: https://github.com/collective/collective.googlenews/issues/3
 

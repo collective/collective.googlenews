@@ -13,8 +13,9 @@ class IGoogleNewsLayer(Interface):
 class GoogleNewsSettings(Interface):
     """Settings site wide of this addon"""
 
+    # XXX: default value is declared at profiles/default/registry.xml
     portal_types = schema.List(
         title=_(u"Portal types"),
         description=_(u"Select portal types you want to apply digit id."),
-        value_type=schema.ASCIILine(title=_(u"Portal type")),
+        value_type=schema.Choice(vocabulary=u'plone.app.vocabularies.UserFriendlyTypes'),
         )
