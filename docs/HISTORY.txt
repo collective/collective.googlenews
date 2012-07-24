@@ -13,6 +13,9 @@ Changelog
 
 - Updated package documentation. [hvelarde]
 
+- [bugfix] Replaced the UserFriendlyTypes vocabulary in favor of 
+  ReallyUserFriendlyTypes. [frapell]
+
 
 1.0rc1 (2012-05-11)
 -------------------
