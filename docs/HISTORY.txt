@@ -12,7 +12,7 @@ Changelog
 
 - Tested Plone 4.2 compatibility. [hvelarde]
 
-- Added support for Dexterity content types (fixes #2). [flecox]
+- Added support for Dexterity content types (fixes `#2`_). [flecox]
 
 - Added Spanish and Brazilian Portuguese translations. [hvelarde]
 
@@ -31,4 +31,6 @@ Changelog
 ------------------
 
 - Initial release.
+
+.. _`#2`: https://github.com/collective/collective.googlenews/issues/2
 
