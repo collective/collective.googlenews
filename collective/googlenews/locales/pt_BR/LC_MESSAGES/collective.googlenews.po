@@ -16,8 +16,8 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 #: collective/googlenews/interfaces.py:18
-msgid "Add portal types you want to apply digit id."
-msgstr "Adicionar tipos de conteúdo que você deseja aplicar o digit ID."
+msgid "Select portal types you want to apply digit id."
+msgstr "Selecione os tipos de conteúdo que você deseja aplicar o digit ID."
 
 #: collective/googlenews/controlpanel.py:12
 #: collective/googlenews/profiles/default/controlpanel.xml
