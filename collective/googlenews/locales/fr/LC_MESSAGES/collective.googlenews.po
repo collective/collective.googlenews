@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-02-17 18:24+0000\n"
+"POT-Creation-Date: 2012-07-24 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,21 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.googlenews\n"
 
-#: ./i18n.py:10
-#: ./profiles/default/controlpanel.xml
-msgid "Google News Settings"
-msgstr ""
-
-#: ./i18n.py:8
-msgid "Portal type"
-msgstr ""
-
-#: ./i18n.py:6
-msgid "Portal types"
-msgstr ""
-
-#: ./i18n.py:7
+#: collective/googlenews/interfaces.py:18
 msgid "Add portal types you want to apply digit id."
 msgstr ""
 
+#: collective/googlenews/controlpanel.py:12
+#: collective/googlenews/profiles/default/controlpanel.xml
+msgid "Google News Settings"
+msgstr ""
+
+#: collective/googlenews/interfaces.py:17
+msgid "Portal types"
+msgstr ""
+
 #. Default: "You can configure the settings of collective.googlenews add-on"
-#: ./i18n.py:11
-#: ./profiles/default/controlpanel.xml
+#: collective/googlenews/controlpanel.py:13
 msgid "controlpanel_desc"
 msgstr ""
 
