@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Replaced the UserFriendlyTypes vocabulary in favor of
+  ReallyUserFriendlyTypes. [frapell]
+
 - Do not run uninstall profile on reinstall. [hvelarde]
 
 - Control panel widget was replaced; we use now Choice instead of ASCIILine
@@ -12,9 +15,6 @@ Changelog
 - Updated Spanish and Brazilian Portuguese translations. [hvelarde]
 
 - Updated package documentation. [hvelarde]
-
-- [bugfix] Replaced the UserFriendlyTypes vocabulary in favor of 
-  ReallyUserFriendlyTypes. [frapell]
 
 
 1.0rc1 (2012-05-11)
