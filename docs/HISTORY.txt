@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc2 (unreleased)
+1.0rc2 (2012-07-24)
 -------------------
 
 - Replaced the UserFriendlyTypes vocabulary in favor of
