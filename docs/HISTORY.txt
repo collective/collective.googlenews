@@ -10,7 +10,8 @@ Changelog
 1.0rc3 (2013-01-24)
 -------------------
 
-- Nothing changed yet.
+- Add keyword mapping support.
+- Update french translations
 
 
 1.0rc2 (2012-07-24)
