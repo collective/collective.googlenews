@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.googlenews 1.0\n"
-"POT-Creation-Date: 2012-07-24 15:04+0000\n"
+"POT-Creation-Date: 2013-01-24 10:04+0000\n"
 "PO-Revision-Date: 2012-07-24 11:55-0300\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: Spanish <https://github.com/collective>\n"
@@ -15,22 +15,25 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: collective/googlenews/interfaces.py:18
-msgid "Select portal types you want to apply digit id."
-msgstr "Seleccione los tipos de contenido a los que les quiere aplicar el digit ID."
-
 #: collective/googlenews/controlpanel.py:12
-#: collective/googlenews/profiles/default/controlpanel.xml
 msgid "Google News Settings"
 msgstr "Configuración de Google News"
 
-#: collective/googlenews/interfaces.py:17
+#: collective/googlenews/interfaces.py:28
+msgid "Keywords Mapping"
+msgstr ""
+
+#: collective/googlenews/interfaces.py:22
 msgid "Portal types"
 msgstr "Tipos de contenido"
 
 #: Profile description in configure.zcml
 msgid "Removes support for Google News from your site."
 msgstr "Elimina el soporte para Google News de su sitio."
+
+#: collective/googlenews/interfaces.py:23
+msgid "Select portal types you want to apply digit id."
+msgstr "Seleccione los tipos de contenido a los que les quiere aplicar el digit ID."
 
 #: Profile title in configure.zcml
 msgid "Support for Google News"
@@ -48,4 +51,8 @@ msgstr "Desinstala collective.googlenews"
 #: collective/googlenews/controlpanel.py:13
 msgid "controlpanel_desc"
 msgstr "Aquí puede configurar el paquete collective.googlenews."
+
+#: collective/googlenews/interfaces.py:30
+msgid "keyword|googlekeyword"
+msgstr ""
 
