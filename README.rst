@@ -4,6 +4,10 @@ collective.googlenews
 
 .. contents:: Table of Contents
 
+
+.. image:: https://secure.travis-ci.org/collective/collective.googlenews.png
+    :target: http://travis-ci.org/collective/collective.googlenews
+
 Introduction
 ============
 
