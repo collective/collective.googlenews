@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.0rc3.dev0'
-long_description = open("README.txt").read() + "\n" + \
+long_description = open("README.rst").read() + "\n" + \
                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" + \
                    open(os.path.join("docs", "HISTORY.txt")).read()
@@ -28,7 +28,7 @@ setup(name='collective.googlenews',
         "Topic :: Office/Business :: News/Diary",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='',
+      keywords='plone google',
       author='JeanMichel FRANCOIS aka toutpt',
       author_email='toutpt@gmail.com',
       url='https://github.com/collective/collective.googlenews',
