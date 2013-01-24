@@ -1,30 +1,23 @@
 import random
-from Acquisition import aq_base
 
 from zope import component
 from zope import interface
-from zope.component import getMultiAdapter, getUtility
 
 from collective.googlenews import interfaces
 from collective.googlenews.interfaces import GoogleNewsSettings
 
-try:
-    from plone.registry.interfaces import IRegistry
-    from plone.app.content.interfaces import INameFromTitle
-except ImportError, e:
-    class IRegistry(interface.Interface):
-        pass
-    class INameFromTitle(interface.Interface):
-        pass
+from plone.registry.interfaces import IRegistry
+from plone.app.content.interfaces import INameFromTitle
 
 
 def randomid():
-    return '-'+str(random.randint(100, 9999))+'.html'
+    return '-' + str(random.randint(100, 9999)) + '.html'
 
-def generateNewId(self, name=None, object=None):
+
+def generateNewId(self, name=None, instance=None):
     #its a dexterity ct
     if hasattr(self, '_old_chooseName'):
-        newid = self._old_chooseName(name, object)
+        newid = self._old_chooseName(name, instance)
         request = getattr(self.context, 'REQUEST', None)
     else:
         newid = self._old_generateNewId()
@@ -41,9 +34,9 @@ def generateNewId(self, name=None, object=None):
                 portal_types = settings.portal_types
     except:
         portal_types = ['News Item']
-    if not object:
-        object = self
-    if getattr(object,'portal_type') in portal_types:
+    if not instance:
+        instance = self
+    if getattr(instance, 'portal_type') in portal_types:
         if newid is not None:
             newid += randomid()
     return newid

@@ -2,6 +2,7 @@
 
 from collective.googlenews.tests import base, utils
 
+
 class Test(base.UnitTestCase):
 
     def setUp(self):
@@ -34,7 +35,7 @@ class Test(base.UnitTestCase):
         self.failUnless(digit.isdigit())
         self.failUnless(len(digit) > 2)
         self.failUnless(len(digit) < 5)
-    
+
     def test_dexterity_generateNewId(self):
         self.context = utils.FakeDexterityContext()
         self.context.REQUEST = self.requestNoLayer

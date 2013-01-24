@@ -24,8 +24,8 @@ FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
     name='collective.googlenews:Integration',
-    )
+)
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE,),
     name='collective.googlenews:Functional',
-    )
+)

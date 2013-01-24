@@ -2,6 +2,7 @@ class FakeAcquisition(object):
     def __init__(self):
         self.aq_explicit = None
 
+
 class FakeContext(object):
 
     def __init__(self):
@@ -10,7 +11,7 @@ class FakeContext(object):
         self.title = "a title"
         self.description = "a description"
         self.creators = ["myself"]
-        self.date="a date"
+        self.date = "a date"
         self.aq_inner = FakeAcquisition()
         self.aq_inner.aq_explicit = self
         self._modified = "modified date"
@@ -42,24 +43,22 @@ class FakeContext(object):
         return self._modified
 
     def getPhysicalPath(self):
-        return ('/','a','not','existing','path')
+        return ('/', 'a', 'not', 'existing', 'path')
 
     def getFolderContents(self, filter=None):
         catalog = FakeCatalog()
         return catalog.searchResults()
 
     def absolute_url(self):
-        return "http://nohost.com/"+self.id
+        return "http://nohost.com/" + self.id
 
-    def queryCatalog(self, **kwargs): #fake Topic
+    def queryCatalog(self, **kwargs):  # fake Topic
         catalog = FakeCatalog()
         return catalog.searchResults()
 
-    def getRemoteUrl(self): #fake Link
+    def getRemoteUrl(self):  # fake Link
         return self.remoteUrl
 
-    def modified(self): #for ram cache key
-        return "a modification date"
 
 class FakeBrain(object):
     def __init__(self):
@@ -67,7 +66,7 @@ class FakeBrain(object):
         self.Description = ""
         self.getId = ""
         self.EffectiveDate = ""
-        self.Subject = []
+        self.Subject = ['economie']
         self.url = "http://myportal.com/"
 
     def getURL(self):
@@ -78,6 +77,7 @@ class FakeBrain(object):
         ob.title = self.Title
 
         return ob
+
 
 class FakeCatalog(object):
     def searchResults(self, **kwargs):
@@ -99,6 +99,7 @@ class FakeCatalog(object):
     def modified(self):
         return '654654654654'
 
+
 class FakePlonePortalState(object):
     def __init__(self):
         self.portal_title = "portal title"
@@ -107,20 +108,26 @@ class FakePlonePortalState(object):
     def language(self):
         return self.lang
 
+
 class FakeDexterityContext(FakeContext):
-    
+
     def __init__(self):
         self.portal_type = 'News Item'
         self.id = "myid"
         self.title = "a title"
         self.description = "a description"
         self.creators = ["myself"]
-        self.date="a date"
+        self.date = "a date"
         self.aq_inner = FakeAcquisition()
         self.aq_inner.aq_explicit = self
         self.context = self
         self._modified = "modified date"
-    
-    def _old_chooseName(self, name, object):
+
+    def _old_chooseName(self, name, instance):
         return 'dex-title'
-    
+
+
+class FakeSettings(object):
+    def __init__(self):
+        self.portal_types = ['News Item']
+        self.keywords_mapping = []
