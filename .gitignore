@@ -1,3 +1,4 @@
+rebuild_i18n.sh
 *.mo
 *.egg-info
 *.egg
