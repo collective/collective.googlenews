@@ -11,6 +11,7 @@
   <five:registerPackage package="." />
   <i18n:registerTranslations directory="locales" />
   <includeDependencies package="." />
+  <include package="collective.monkeypatcher" />
 
   <genericsetup:registerProfile
       name="default"
