@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-01-24 10:04+0000\n"
+"POT-Creation-Date: 2015-08-29 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,15 @@ msgstr ""
 msgid "Google News Settings"
 msgstr "Configuration de Google Actualités"
 
-#: collective/googlenews/interfaces.py:28
+#: collective/googlenews/interfaces.py:27
 msgid "Keywords Mapping"
 msgstr "Mapping des mots-clés"
 
-#: collective/googlenews/interfaces.py:22
+#: collective/googlenews/interfaces.py:9
+msgid "Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+msgstr ""
+
+#: collective/googlenews/interfaces.py:21
 msgid "Portal types"
 msgstr "Types de contenu"
 
@@ -33,7 +37,7 @@ msgstr "Types de contenu"
 msgid "Removes support for Google News from your site."
 msgstr "Supprimer le support de Google Actualités de votre site"
 
-#: collective/googlenews/interfaces.py:23
+#: collective/googlenews/interfaces.py:22
 msgid "Select portal types you want to apply digit id."
 msgstr "Sélectionner les types de contenu auquels vous souhaitez suffixer d'un 'numéro.html'"
 
@@ -54,7 +58,7 @@ msgstr ""
 msgid "controlpanel_desc"
 msgstr "Vous pouvez configurer le module collective.googlenews"
 
-#: collective/googlenews/interfaces.py:30
+#: collective/googlenews/interfaces.py:29
 msgid "keyword|googlekeyword"
 msgstr "mot-clé|mot-clés google"
 

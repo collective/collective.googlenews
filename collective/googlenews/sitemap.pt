@@ -3,17 +3,17 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:tal="http://xml.zope.org/namespaces/tal">
   <url tal:repeat="news view/news">
-    <loc tal:content="news/loc">http://www.example.org/business/article55.html</loc>
+    <loc tal:content="news/loc"><tal:comment replace="nothing">http://www.example.org/business/article55.html</tal:comment></loc>
     <news:news>
       <news:publication>
-        <news:name tal:content="news/name">Journal L'Exemple</news:name>
-        <news:language tal:content="news/language">fr</news:language>
+        <news:name tal:content="news/name"><tal:comment replace="nothing">Journal L'Exemple</tal:comment></news:name>
+        <news:language tal:content="news/language"><tal:comment replace="nothing">fr</tal:comment></news:language>
       </news:publication>
-      <news:access tal:condition="news/access" tal:content="news/access">Abonnement</news:access>
-      <news:genres tal:condition="news/genres" tal:content="news/genres">CommuniquéPresse, Blog</news:genres>
-      <news:publication_date tal:content="news/publication_date">2008-12-23</news:publication_date>
-      <news:title tal:content="news/title">Entreprises A, B dans les négociations de fusion</news:title>
-      <news:keywords tal:condition="news/keywords" tal:content="news/keywords">business, fusion, acquisition, A, B</news:keywords>
+      <news:access tal:condition="news/access" tal:content="news/access"><tal:comment replace="nothing">Abonnement</tal:comment></news:access>
+      <news:genres tal:condition="news/genres" tal:content="news/genres"><tal:comment replace="nothing">CommuniquéPresse, Blog</tal:comment></news:genres>
+      <news:publication_date tal:content="news/publication_date"><tal:comment replace="nothing">2008-12-23</tal:comment></news:publication_date>
+      <news:title tal:content="news/title"><tal:comment replace="nothing">Entreprises A, B dans les négociations de fusion</tal:comment></news:title>
+      <news:keywords tal:condition="news/keywords" tal:content="news/keywords"><tal:comment replace="nothing">business, fusion, acquisition, A, B</tal:comment></news:keywords>
     </news:news>
   </url>
 </urlset>

@@ -1,29 +1,37 @@
 # Héctor Velarde <hector.velarde@gmail.com>, 2012.
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2015.
 msgid ""
 msgstr ""
-"Project-Id-Version: collective.googlenews 1.0\n"
-"POT-Creation-Date: 2013-01-24 10:04+0000\n"
-"PO-Revision-Date: 2012-07-24 11:55-0300\n"
-"Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
-"Language-Team: Spanish <https://github.com/collective>\n"
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2015-08-29 19:53+0000\n"
+"PO-Revision-Date: 2015-08-29 15:05-0430\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: ES <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: collective.googlenews\n"
+"Language: es\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
 #: collective/googlenews/controlpanel.py:12
 msgid "Google News Settings"
 msgstr "Configuración de Google News"
 
-#: collective/googlenews/interfaces.py:28
+#: collective/googlenews/interfaces.py:27
 msgid "Keywords Mapping"
-msgstr ""
+msgstr "Mapeado de palabras clave"
 
-#: collective/googlenews/interfaces.py:22
+#: collective/googlenews/interfaces.py:9
+msgid "Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+msgstr "Por favor, lea el siguiente articulo http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+
+#: collective/googlenews/interfaces.py:21
 msgid "Portal types"
 msgstr "Tipos de contenido"
 
@@ -31,7 +39,7 @@ msgstr "Tipos de contenido"
 msgid "Removes support for Google News from your site."
 msgstr "Elimina el soporte para Google News de su sitio."
 
-#: collective/googlenews/interfaces.py:23
+#: collective/googlenews/interfaces.py:22
 msgid "Select portal types you want to apply digit id."
 msgstr "Seleccione los tipos de contenido a los que les quiere aplicar el digit ID."
 
@@ -52,7 +60,7 @@ msgstr "Desinstala collective.googlenews"
 msgid "controlpanel_desc"
 msgstr "Aquí puede configurar el paquete collective.googlenews."
 
-#: collective/googlenews/interfaces.py:30
+#: collective/googlenews/interfaces.py:29
 msgid "keyword|googlekeyword"
 msgstr ""
 

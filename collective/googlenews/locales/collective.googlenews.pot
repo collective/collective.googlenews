@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.googlenews\n"
-"POT-Creation-Date: 2013-01-24 10:04+0000\n"
+"POT-Creation-Date: 2015-08-29 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,15 @@ msgstr ""
 msgid "Google News Settings"
 msgstr ""
 
-#: collective/googlenews/interfaces.py:28
+#: collective/googlenews/interfaces.py:27
 msgid "Keywords Mapping"
 msgstr ""
 
-#: collective/googlenews/interfaces.py:22
+#: collective/googlenews/interfaces.py:9
+msgid "Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+msgstr ""
+
+#: collective/googlenews/interfaces.py:21
 msgid "Portal types"
 msgstr ""
 
@@ -33,7 +37,7 @@ msgstr ""
 msgid "Removes support for Google News from your site."
 msgstr ""
 
-#: collective/googlenews/interfaces.py:23
+#: collective/googlenews/interfaces.py:22
 msgid "Select portal types you want to apply digit id."
 msgstr ""
 
@@ -54,7 +58,7 @@ msgstr ""
 msgid "controlpanel_desc"
 msgstr ""
 
-#: collective/googlenews/interfaces.py:30
+#: collective/googlenews/interfaces.py:29
 msgid "keyword|googlekeyword"
 msgstr ""
 
