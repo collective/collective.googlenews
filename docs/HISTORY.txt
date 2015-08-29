@@ -4,7 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Updated Spanish translation. [macagua]
+
+- Updated i18n support. [macagua]
 
 
 1.0rc3 (2013-01-24)
