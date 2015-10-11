@@ -28,8 +28,8 @@ msgid "Keywords Mapping"
 msgstr "Mapeado de palabras clave"
 
 #: collective/googlenews/interfaces.py:9
-msgid "Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
-msgstr "Por favor, lea el siguiente articulo http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+msgid "Pleasereadhttps://support.google.com/news/publisher/answer/116037"
+msgstr "Por favor, lea el siguiente articulo https://support.google.com/news/publisher/answer/116037?hl=es"
 
 #: collective/googlenews/interfaces.py:21
 msgid "Portal types"

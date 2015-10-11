@@ -6,7 +6,7 @@ from zope.interface import Interface
 from collective.googlenews import _
 
 TYPES_VOCAB = u"plone.app.vocabularies.ReallyUserFriendlyTypes"
-keywords_msgid = _(u"Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037").replace(" ", "")
+keywords_msgid = _(u"Please read https://support.google.com/news/publisher/answer/116037").replace(" ", "")
 
 
 class IGoogleNewsLayer(Interface):

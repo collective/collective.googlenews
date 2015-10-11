@@ -26,7 +26,7 @@ msgid "Keywords Mapping"
 msgstr "Mapping des mots-clés"
 
 #: collective/googlenews/interfaces.py:9
-msgid "Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+msgid "Pleasereadhttps://support.google.com/news/publisher/answer/116037"
 msgstr ""
 
 #: collective/googlenews/interfaces.py:21
