@@ -35,7 +35,7 @@ normalizer to add a unique id.
 SiteMap
 =======
 
-This add-on add a @@googlenews-sitemap.xml view for topic content type. This
+This add-on add a **@@googlenews-sitemap.xml** view for topic content type. This
 view add some checks before loading items:
 
 * no more than 1000 items returned
@@ -49,10 +49,22 @@ How to publish my website into Google News ?
 ============================================
 
 You need to have a topic instance in your website. By default in Plone
-/news/aggregator is the one. In the process you can provide the sitemap to
+**/news/aggregator** is the one. In the process you can provide the sitemap to
 help google to get the last news by providing the url
-example.com/news/aggregator/@@googlenews-sitemap.xml
+``example.com/news/aggregator/@@googlenews-sitemap.xml``.
+
+Contribute
+==========
+
+- Issue Tracker: https://github.com/collective/collective.googlenews/issues
+- Source Code: https://github.com/collective/collective.googlenews
+- Google News technical requirements: https://support.google.com/news/publisher/answer/2481358?topic=2481296
+
+License
+=======
+
+The project is licensed under the GPLv2.
 
 .. _`Google News`: https://news.google.com/
-.. _`technical requirements`: https://support.google.com/news/publisher/bin/answer.py?answer=2481358&topic=2481296
+.. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358?topic=2481296
 
