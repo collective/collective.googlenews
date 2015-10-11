@@ -33,7 +33,7 @@ class Test(base.UnitTestCase):
         self.assertIn(effective, 'min:max')
 
     def test_get_genres(self):
-        #return an empty list
+        # return an empty list
         brain = utils.FakeBrain()
         genres = self.view.get_genres(brain)
         self.assertIsInstance(genres, list)

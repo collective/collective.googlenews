@@ -15,7 +15,7 @@ def randomid():
 
 
 def generateNewId(self, name=None, instance=None):
-    #its a dexterity ct
+    # its a dexterity ct
     if hasattr(self, '_old_chooseName'):
         newid = self._old_chooseName(name, instance)
         request = getattr(self.context, 'REQUEST', None)
@@ -24,7 +24,7 @@ def generateNewId(self, name=None, instance=None):
         request = getattr(self, 'REQUEST', None)
     if not interfaces.IGoogleNewsLayer.providedBy(request):
         return newid
-    #the addon is activate, check the content type
+    # the addon is activate, check the content type
     registry = component.queryUtility(IRegistry, None)
     try:
         portal_types = ['News Item']

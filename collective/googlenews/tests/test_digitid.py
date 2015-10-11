@@ -13,10 +13,10 @@ class Test(base.UnitTestCase):
     def test_randomid(self):
         from collective.googlenews import digitid
         id = digitid.randomid()
-        #check common rule
+        # check common rule
         self.failUnless(id.startswith('-'))
         self.failUnless(id.endswith('.html'))
-        #check on with 1000 ids
+        # check on with 1000 ids
         digits = [digitid.randomid()[1:-5] for i in range(1000)]
         for digit in digits:
             self.failUnless(digit.isdigit())
