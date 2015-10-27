@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Add support for Editors' Picks feeds (closes `#9`_).
+  [rodfersou]
+
 - Get rid of the '.html' on the ids (closes `#8`_).
   [hvelarde]
 
@@ -69,3 +72,4 @@ Changelog
 .. _`#2`: https://github.com/collective/collective.googlenews/issues/2
 .. _`#3`: https://github.com/collective/collective.googlenews/issues/3
 .. _`#8`: https://github.com/collective/collective.googlenews/issues/8
+.. _`#9`: https://github.com/collective/collective.googlenews/issues/9

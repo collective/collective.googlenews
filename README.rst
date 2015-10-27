@@ -78,6 +78,14 @@ You need to have a topic instance in your website. By default in Plone
 help google to get the last news by providing the url
 ``example.com/news/aggregator/@@googlenews-sitemap.xml``.
 
+Editors' Picks feeds
+====================
+
+`Editors' Picks`_ enables you to provide up to five links to original news content you believe represents your organization's best journalistic work at any given moment,
+and potentially have it displayed on the Google News homepage or select section pages.
+
+This package allows you to add a feed that complies with the general guidelines.
+
 Contribute
 ==========
 
@@ -90,5 +98,6 @@ License
 
 The project is licensed under the GPLv2.
 
+.. _`Editors' Picks`: https://support.google.com/news/publisher/answer/1407682
 .. _`Google News`: https://news.google.com/
 .. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358?topic=2481296

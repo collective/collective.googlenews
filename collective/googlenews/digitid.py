@@ -1,13 +1,12 @@
-import random
-
+# -*- coding: utf-8 -*-
+from collective.googlenews import interfaces
+from collective.googlenews.interfaces import GoogleNewsSettings
+from plone.app.content.interfaces import INameFromTitle
+from plone.registry.interfaces import IRegistry
 from zope import component
 from zope import interface
 
-from collective.googlenews import interfaces
-from collective.googlenews.interfaces import GoogleNewsSettings
-
-from plone.registry.interfaces import IRegistry
-from plone.app.content.interfaces import INameFromTitle
+import random
 
 
 def randomid():
@@ -30,9 +29,9 @@ def generateNewId(self, name=None, instance=None):
         portal_types = ['News Item']
         if registry:
             settings = registry.forInterface(GoogleNewsSettings, False)
-            if hasattr(settings, 'portal_types'):
+            if getattr(settings, 'portal_types', False):
                 portal_types = settings.portal_types
-    except:
+    except Exception:
         portal_types = ['News Item']
     if not instance:
         instance = self
@@ -43,7 +42,7 @@ def generateNewId(self, name=None, instance=None):
 
 
 class NameFromTitle(object):
-    """Name chooser to fit google news constraints"""
+    """Name chooser to fit Google News constraints."""
     interface.implements(INameFromTitle)
 
     def __init__(self, context):

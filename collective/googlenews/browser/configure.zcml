@@ -1,0 +1,10 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+  <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="googlenews-editorspicks"
+      class=".views.GoogleNewsEditorsPicks"
+      permission="zope.Public"
+      layer="collective.googlenews.interfaces.IGoogleNewsLayer"
+      />
+</configure>
