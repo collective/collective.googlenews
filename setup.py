@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0rc4.dev0'
+version = '2.0a1.dev0'
 long_description = open("README.rst").read() + "\n" + \
                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" + \
@@ -12,7 +12,7 @@ setup(name='collective.googlenews',
       description="Make easy to add your Plone site to Google News.",
       long_description=long_description,
       classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: 4.0",
