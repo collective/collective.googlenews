@@ -1,35 +1,40 @@
 language: python
 python: 2.7
+sudo: false
+cache:
+  directories:
+  - eggs
+  - parts/node
 env:
-  - TARGET=test
-  - TARGET=coverage.sh
-  - TARGET=python-validation.sh
-
-#  - TARGET=css-validation.sh
-#  - TARGET=js-validation.sh
-
-# csslint and jshint dependencies, uncomment if needed
-# before_install:
-#  - sudo apt-get install ack-grep
-#  - sudo apt-add-repository ppa:chris-lea/node.js -y
-#  - sudo apt-get update 1>/dev/null
-#  - sudo apt-get install nodejs npm -y
-#
-# csslint
-#  - npm install csslint -g
-#
-# jshint
-#  - npm install jshint -g
-#
-# robotframework or selenium
-#  - export DISPLAY=:99.0
-#  - sh -e /etc/init.d/xvfb start
-
+- PLONE_VERSION=4.2
+- PLONE_VERSION=4.3
+matrix:
+  include:
+  - python: 2.6
+    env: PLONE_VERSION=4.0
+  - python: 2.6
+    env: PLONE_VERSION=4.1
+  allow_failures:
+  - python: 2.6
+    env: PLONE_VERSION=4.0
+  - python: 2.6
+    env: PLONE_VERSION=4.1
+  fast_finish: true
 install:
-  - mkdir -p buildout-cache/eggs
-  - mkdir -p buildout-cache/downloads
-  - python bootstrap.py -c travis.cfg
-  - bin/buildout -N -t 3 -c travis.cfg install download install
-  - bin/buildout -N -t 3 -c travis.cfg
-
-script: bin/$TARGET
+- sed -ie "s#test-4.3#test-$PLONE_VERSION#" buildout.cfg
+- python bootstrap.py
+- bin/buildout annotate
+- bin/buildout -Nq
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- firefox -v
+script:
+- bin/code-analysis
+- bin/test
+after_success:
+- bin/createcoverage -t "--layer=!Robot"
+- pip install -q coveralls
+- coveralls
+notifications:
+  irc: irc.freenode.org#plone-testing
