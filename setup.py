@@ -39,12 +39,25 @@ setup(name='collective.googlenews',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-        'setuptools',
+        'plone.app.content',
         'plone.app.registry',
-        ],
+        'plone.registry',
+        'Products.Archetypes',
+        'Products.ATContentTypes',
+        'Products.CMFPlone',
+        'Products.GenericSetup',
+        'setuptools',
+        'zope.component',
+        'zope.interface',
+        'zope.schema',
+      ],
       extras_require={
-        'test': ['plone.app.testing'],
-        },
+        'test': [
+            'plone.app.testing',
+            'plone.browserlayer',
+            'unittest2',
+        ],
+      },
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
