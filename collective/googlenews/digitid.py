@@ -11,7 +11,7 @@ from plone.app.content.interfaces import INameFromTitle
 
 
 def randomid():
-    return '-' + str(random.randint(100, 9999)) + '.html'
+    return '-' + str(random.randint(100, 9999))
 
 
 def generateNewId(self, name=None, instance=None):
