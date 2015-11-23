@@ -5,8 +5,15 @@ collective.googlenews
 .. contents:: Table of Contents
 
 
-.. image:: https://secure.travis-ci.org/collective/collective.googlenews.png
+.. image:: http://img.shields.io/pypi/v/collective.googlenews.svg
+    :target: https://pypi.python.org/pypi/collective.googlenews
+
+.. image:: https://img.shields.io/travis/collective/collective.googlenews/master.svg
     :target: http://travis-ci.org/collective/collective.googlenews
+
+.. image:: https://img.shields.io/coveralls/collective/collective.googlenews/master.svg
+    :target: https://coveralls.io/r/collective/collective.googlenews
+
 
 Introduction
 ============
@@ -67,4 +74,3 @@ The project is licensed under the GPLv2.
 
 .. _`Google News`: https://news.google.com/
 .. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358?topic=2481296
-
