@@ -13,7 +13,7 @@ Changelog
 - Update package dependencies.
   [hvelarde]
 
-- Drop support for Plone 4.0, Plone 4.1 and Python 2.6.
+- Drop support for Plone 4.0, Plone 4.1, Plone 4.2 and Python 2.6.
   [hvelarde]
 
 - Updated Spanish translation. [macagua]
