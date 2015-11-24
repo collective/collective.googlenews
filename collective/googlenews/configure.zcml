@@ -10,7 +10,9 @@
 
   <five:registerPackage package="." />
   <i18n:registerTranslations directory="locales" />
-  <includeDependencies package="." />
+
+  <include package="collective.monkeypatcher" />
+  <include package="Products.CMFCore" file="permissions.zcml" />
 
   <genericsetup:registerProfile
       name="default"
