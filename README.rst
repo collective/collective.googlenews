@@ -18,20 +18,15 @@ collective.googlenews
 Introduction
 ============
 
-`Google News`_ is compiled solely by a computer algorithm that scans all the
-sites included in their system. In order for your content to be included in
-`Google News`_, the layout and format of your site must be easy for their
-crawler to read and decipher. Additionally, they have certain restrictions in
-place to make sure their crawler only includes links to URLs that are actually
-news articles.
+`Google News`_ is a computer-generated news service that aggregates headlines from more than 50,000 news sources worldwide,
+grouping similar stories together, and displaying them according to each reader's interests.
 
-Google asks that you to review all of their guidelines before submitting your
-site for inclusion in `Google News`_. Making sure your site conforms to all
-their `technical requirements`_ now will help prevent any issues with your
-site in the future.
+In order for your content to be included in `Google News`_,
+Google has certain restrictions in place to make sure their crawler only includes links to URLs that are actually news articles.
 
-This package helps you make your Plone site comply with these `technical
-requirements`_.
+Google also asks you to review all of their guidelines before submitting your site for inclusion in `Google News`_.
+
+This package helps you make your Plone site comply with Google's `technical requirements`_.
 
 Installation
 ============
@@ -106,4 +101,4 @@ The project is licensed under the GPLv2.
 .. _`Editors' Picks`: https://support.google.com/news/publisher/answer/1407682
 .. _`Google News Publisher Center`: https://partnerdash.google.com/partnerdash/d/news
 .. _`Google News`: https://news.google.com/
-.. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358?topic=2481296
+.. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358
