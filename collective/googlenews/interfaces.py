@@ -5,7 +5,6 @@ from plone.directives import form
 from zope import schema
 from zope.interface import Interface
 
-TYPES_VOCAB = u'plone.app.vocabularies.ReallyUserFriendlyTypes'
 EDITORS_PICKS_LINK = u'https://support.google.com/news/publisher/answer/1407682'
 
 
@@ -21,8 +20,9 @@ class GoogleNewsSettings(form.Schema):
     # XXX: default value is declared at profiles/default/registry.xml
     portal_types = schema.List(
         title=_(u'Portal types'),
-        description=_(u'Select portal types you want to apply digit id.'),
-        value_type=schema.Choice(vocabulary=TYPES_VOCAB),
+        description=_(u'Select portal types that will be considered news articles.'),
+        value_type=schema.Choice(
+            vocabulary=u'plone.app.vocabularies.ReallyUserFriendlyTypes'),
     )
 
     logo = schema.ASCII(
