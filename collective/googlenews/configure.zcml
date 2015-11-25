@@ -36,7 +36,7 @@
   <browser:page
     name="googlenews-controlpanel"
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".controlpanel.ControlPanelView"
+    class=".controlpanel.GoogleNewsControlPanelView"
     permission="cmf.ManagePortal"
     />
 
@@ -70,4 +70,11 @@
     file="controlpanel.png"
     />
 
+  <monkey:patch
+    description="Return Google News logo url if available, else return portal logo"
+    class="Products.CMFPlone.browser.syndication.adapters.FolderFeed"
+    original="logo"
+    replacement=".patches.patched_logo"
+    handler=".patches.apply_patched_logo"
+    />
 </configure>

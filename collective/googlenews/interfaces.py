@@ -2,14 +2,13 @@
 from collective.googlenews import _
 from collective.googlenews.utils import validate_logo
 from plone.directives import form
-from z3c.form import field
-from z3c.form import group
 from zope import schema
 from zope.interface import Interface
 
-EDITORS_PICKS_HELP = 'https://support.google.com/news/publisher/answer/1407682'
 TYPES_VOCAB = u'plone.app.vocabularies.ReallyUserFriendlyTypes'
 keywords_msgid = _(u'Please read https://support.google.com/news/publisher/answer/116037').replace(' ', '')
+
+EDITORS_PICKS_LINK = u'https://support.google.com/news/publisher/answer/1407682'
 
 
 class IGoogleNewsLayer(Interface):
@@ -34,41 +33,13 @@ class GoogleNewsSettings(form.Schema):
         value_type=schema.TextLine(title=_(u'keyword|googlekeyword'))
     )
 
-
-class IGoogleNewsEditorsPicksSettings(form.Schema):
-
-    """Editor picks settings of this addon"""
-
     logo = schema.ASCII(
-        title=_(u"Logo image to be used on Editors' Picks feeds"),
+        title=_(u'Logo image'),
         description=_(
-            u'Google News requires a logo image to be linked in the feed. '
-            u'The image must follow the specifications defined in the '
-            u'<a href="{0}">feed guidelines</a>.'.format(EDITORS_PICKS_HELP)
+            u"Google News requires Editors' Picks feed logos to follow some "
+            u'<a href="{0}">general guidelines</a>. This image will replace '
+            u'the logo in all Atom feeds on the site.'.format(EDITORS_PICKS_LINK)
         ),
         required=False,
         constraint=validate_logo,
     )
-
-
-class GoogleNewsGroup(group.Group):
-
-    """Default settings group."""
-
-    label = _(u'Default')
-    description = _('Default Configuration')
-    fields = field.Fields(GoogleNewsSettings)
-
-
-class GoogleNewsEditorsPicksGroup(group.Group):
-
-    """Editor Picks settings group."""
-
-    label = _(u"Editors' Picks")
-    description = _("Editors' Picks Configuration")
-    fields = field.Fields(IGoogleNewsEditorsPicksSettings)
-
-
-class IGoogleNewsSchema(GoogleNewsSettings, IGoogleNewsEditorsPicksSettings):
-
-    """Schema for all groups configuration."""

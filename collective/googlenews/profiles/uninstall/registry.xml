@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <registry>
- <record name="collective.googlenews.interfaces.GoogleNewsSettings.portal_types" delete="true" />
+ <records interface="collective.googlenews.interfaces.GoogleNewsSettings" remove="true" />
 </registry>

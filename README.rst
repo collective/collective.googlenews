@@ -84,14 +84,19 @@ Editors' Picks feeds
 `Editors' Picks`_ enables you to provide up to five links to original news content you believe represents your organization's best journalistic work at any given moment,
 and potentially have it displayed on the Google News homepage or select section pages.
 
-This package allows you to add a feed that complies with the general guidelines.
+Adding an Editors' Picks feed
+-----------------------------
+
+* In 'Site Setup', select the Google News configlet
+* Add a logo that complies with the image guidelines
+* Create a collection that lists up to five news items
+* Submit the Atom feed associated with the collection into the `Google News Publisher Center`_
 
 Contribute
 ==========
 
 - Issue Tracker: https://github.com/collective/collective.googlenews/issues
 - Source Code: https://github.com/collective/collective.googlenews
-- Google News technical requirements: https://support.google.com/news/publisher/answer/2481358?topic=2481296
 
 License
 =======
@@ -99,5 +104,6 @@ License
 The project is licensed under the GPLv2.
 
 .. _`Editors' Picks`: https://support.google.com/news/publisher/answer/1407682
+.. _`Google News Publisher Center`: https://partnerdash.google.com/partnerdash/d/news
 .. _`Google News`: https://news.google.com/
 .. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358?topic=2481296

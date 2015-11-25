@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.googlenews.interfaces import IGoogleNewsEditorsPicksSettings
+from collective.googlenews.interfaces import GoogleNewsSettings
 from collective.googlenews.interfaces import validate_logo
 from collective.googlenews.testing import INTEGRATION_TESTING
 from plone import api
@@ -40,13 +40,11 @@ class AtomFeedViewTestCase(unittest.TestCase):
         self.assertEqual(feed.logo, 'http://nohost/plone/logo.png')
 
         api.portal.set_registry_record(
-            IGoogleNewsEditorsPicksSettings.__identifier__ + '.logo',
+            GoogleNewsSettings.__identifier__ + '.logo',
             encode_image('logo_plone_ok.png')
         )
         self.assertEqual(
-            feed.logo,
-            'http://nohost/plone/@@googlenews-editorspicks/logo_plone_ok.png'
-        )
+            feed.logo, 'http://nohost/plone/@@googlenews-logo/logo_plone_ok.png')
 
 
 class ValidateLogoTestCase(unittest.TestCase):

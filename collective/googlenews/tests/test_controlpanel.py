@@ -3,7 +3,7 @@ import unittest
 
 from zope.component import getMultiAdapter
 from zope.component import getUtility
-
+from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import logout
 from plone.app.testing import setRoles
@@ -56,25 +56,25 @@ class RegistryTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.registry = getUtility(IRegistry)
         self.settings = self.registry.forInterface(GoogleNewsSettings)
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def test_record_portal_types(self):
         self.assertTrue(hasattr(self.settings, 'portal_types'))
         self.assertListEqual(self.settings.portal_types, ['News Item'])
 
-    def get_record(self, record):
-        """ Helper function; it raises KeyError if the record is not on the
-        registry.
-        """
-        prefix = 'collective.googlenews.interfaces.GoogleNewsSettings.'
-        return self.registry[prefix + record]
+    def test_logo_record_in_registry(self):
+        self.assertTrue(hasattr(self.settings, 'logo'))
+        self.assertIsNone(self.settings.logo)
 
     def test_records_removed_on_uninstall(self):
-        # XXX: I haven't found a better way to test this; anyone?
         qi = self.portal['portal_quickinstaller']
-        qi.uninstallProducts(products=[PROJECTNAME])
-        self.assertRaises(KeyError, self.get_record, 'portal_types')
+        with api.env.adopt_roles(['Manager']):
+            qi.uninstallProducts(products=[PROJECTNAME])
 
+        BASE_REGISTRY = 'collective.googlenews.interfaces.GoogleNewsSettings.'
+        records = [
+            BASE_REGISTRY + 'portal_types',
+            BASE_REGISTRY + 'logo',
+        ]
 
-def test_suite():
-    return unittest.defaultTestLoader.loadTestsFromName(__name__)
+        for r in records:
+            self.assertNotIn(r, self.registry)
