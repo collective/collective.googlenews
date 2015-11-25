@@ -1,12 +1,11 @@
-import logging
+# -*- coding: utf-8 -*-
+from collective.googlenews.interfaces import GoogleNewsSettings
+from collective.googlenews.logger import logger
 from datetime import date
-from zope import component
-from Products.Five import BrowserView
 from DateTime import DateTime
 from plone.registry.interfaces import IRegistry
-from collective.googlenews.interfaces import GoogleNewsSettings
-
-logger = logging.getLogger('collective.googlenews')
+from Products.Five import BrowserView
+from zope import component
 
 
 class GoogleNewsSiteMap(BrowserView):
@@ -26,7 +25,7 @@ class GoogleNewsSiteMap(BrowserView):
     def update(self):
         if self.portal_state is None:
             self.portal_state = component.getMultiAdapter(
-                (self.context, self.request), name="plone_portal_state"
+                (self.context, self.request), name='plone_portal_state'
             )
         if self.settings is None:
             registry = component.queryUtility(IRegistry, None)
@@ -50,7 +49,7 @@ class GoogleNewsSiteMap(BrowserView):
                           'range': 'min:max'}
         }  # <1000 URLS and published in the last two days.
 
-    def brain2news(self, brain, name=""):
+    def brain2news(self, brain, name=''):
         language = self.get_language(brain)
         publication_date = self.get_publication_date(brain)
         keywords = self.get_keywords(brain)

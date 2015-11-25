@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 class FakeAcquisition(object):
     def __init__(self):
         self.aq_explicit = None
@@ -7,14 +10,14 @@ class FakeContext(object):
 
     def __init__(self):
         self.portal_type = 'News Item'
-        self.id = "myid"
-        self.title = "a title"
-        self.description = "a description"
-        self.creators = ["myself"]
-        self.date = "a date"
+        self.id = 'myid'
+        self.title = 'a title'
+        self.description = 'a description'
+        self.creators = ['myself']
+        self.date = 'a date'
         self.aq_inner = FakeAcquisition()
         self.aq_inner.aq_explicit = self
-        self._modified = "modified date"
+        self._modified = 'modified date'
 
     def _old_generateNewId(self):
         return 'a-title'
@@ -50,7 +53,7 @@ class FakeContext(object):
         return catalog.searchResults()
 
     def absolute_url(self):
-        return "http://nohost.com/" + self.id
+        return 'http://nohost.com/' + self.id
 
     def queryCatalog(self, **kwargs):  # fake Topic
         catalog = FakeCatalog()
@@ -62,12 +65,12 @@ class FakeContext(object):
 
 class FakeBrain(object):
     def __init__(self):
-        self.Title = ""
-        self.Description = ""
-        self.getId = ""
-        self.EffectiveDate = ""
+        self.Title = ''
+        self.Description = ''
+        self.getId = ''
+        self.EffectiveDate = ''
         self.Subject = ['economie']
-        self.url = "http://myportal.com/"
+        self.url = 'http://myportal.com/'
 
     def getURL(self):
         return self.url
@@ -82,18 +85,18 @@ class FakeBrain(object):
 class FakeCatalog(object):
     def searchResults(self, **kwargs):
         brain1 = FakeBrain()
-        brain1.Title = "My first news"
-        brain1.Subject.append("keyword1")
-        brain1.Subject.append("keyword2")
-        brain1.EffectiveDate = "2010-04-05"
-        brain1.url += "/my-first-news"
+        brain1.Title = 'My first news'
+        brain1.Subject.append('keyword1')
+        brain1.Subject.append('keyword2')
+        brain1.EffectiveDate = '2010-04-05'
+        brain1.url += '/my-first-news'
         brain2 = FakeBrain()
-        brain2.Title = "A great news"
-        brain2.Description = "you will drink lots of beer"
-        brain2.Subject.append("keyword1")
-        brain2.Subject.append("keyword3")
-        brain2.EffectiveDate = "2011-04-05"
-        brain2.url += "/a-great-news"
+        brain2.Title = 'A great news'
+        brain2.Description = 'you will drink lots of beer'
+        brain2.Subject.append('keyword1')
+        brain2.Subject.append('keyword3')
+        brain2.EffectiveDate = '2011-04-05'
+        brain2.url += '/a-great-news'
         return [brain1, brain2]
 
     def modified(self):
@@ -102,8 +105,8 @@ class FakeCatalog(object):
 
 class FakePlonePortalState(object):
     def __init__(self):
-        self.portal_title = "portal title"
-        self.lang = "fr"
+        self.portal_title = 'portal title'
+        self.lang = 'fr'
 
     def language(self):
         return self.lang
@@ -113,15 +116,15 @@ class FakeDexterityContext(FakeContext):
 
     def __init__(self):
         self.portal_type = 'News Item'
-        self.id = "myid"
-        self.title = "a title"
-        self.description = "a description"
-        self.creators = ["myself"]
-        self.date = "a date"
+        self.id = 'myid'
+        self.title = 'a title'
+        self.description = 'a description'
+        self.creators = ['myself']
+        self.date = 'a date'
         self.aq_inner = FakeAcquisition()
         self.aq_inner.aq_explicit = self
         self.context = self
-        self._modified = "modified date"
+        self._modified = 'modified date'
 
     def _old_chooseName(self, name, instance):
         return 'dex-title'

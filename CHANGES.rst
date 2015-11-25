@@ -4,13 +4,16 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Add support for Editors' Picks feeds (closes `#9`_).
+  [rodfersou]
+
 - Get rid of the '.html' on the ids (closes `#8`_).
   [hvelarde]
 
 - Update package dependencies.
   [hvelarde]
 
-- Drop support for Plone 4.0, Plone 4.1 and Python 2.6.
+- Drop support for Plone 4.0, Plone 4.1, Plone 4.2 and Python 2.6.
   [hvelarde]
 
 - Updated Spanish translation. [macagua]
@@ -69,3 +72,4 @@ Changelog
 .. _`#2`: https://github.com/collective/collective.googlenews/issues/2
 .. _`#3`: https://github.com/collective/collective.googlenews/issues/3
 .. _`#8`: https://github.com/collective/collective.googlenews/issues/8
+.. _`#9`: https://github.com/collective/collective.googlenews/issues/9

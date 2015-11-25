@@ -6,7 +6,6 @@ cache:
   - eggs
   - parts/node
 env:
-- PLONE_VERSION=4.2
 - PLONE_VERSION=4.3
 - PLONE_VERSION=5.0
 matrix:

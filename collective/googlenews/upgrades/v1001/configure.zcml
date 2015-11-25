@@ -1,0 +1,11 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.googlenews">
+  <genericsetup:upgradeSteps source="1000"
+      destination="1001"
+      profile="collective.googlenews:default">
+    <genericsetup:upgradeStep title="Add support for Google News Editors' Picks feeds"
+        description="Add Editors' Picks tab to control panel configlet."
+        handler=".add_editor_picks_tab" />
+  </genericsetup:upgradeSteps>
+</configure>
