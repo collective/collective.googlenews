@@ -6,8 +6,6 @@ from zope import schema
 from zope.interface import Interface
 
 TYPES_VOCAB = u'plone.app.vocabularies.ReallyUserFriendlyTypes'
-keywords_msgid = _(u'Please read https://support.google.com/news/publisher/answer/116037').replace(' ', '')
-
 EDITORS_PICKS_LINK = u'https://support.google.com/news/publisher/answer/1407682'
 
 
@@ -25,12 +23,6 @@ class GoogleNewsSettings(form.Schema):
         title=_(u'Portal types'),
         description=_(u'Select portal types you want to apply digit id.'),
         value_type=schema.Choice(vocabulary=TYPES_VOCAB),
-    )
-
-    keywords_mapping = schema.List(
-        title=_(u'Keywords Mapping'),
-        description=_(keywords_msgid),
-        value_type=schema.TextLine(title=_(u'keyword|googlekeyword'))
     )
 
     logo = schema.ASCII(
