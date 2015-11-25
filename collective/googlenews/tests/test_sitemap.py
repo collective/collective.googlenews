@@ -31,25 +31,3 @@ class Test(base.UnitTestCase):
         self.assertIn('effective', query)
         effective = query['effective']['range']
         self.assertIn(effective, 'min:max')
-
-    def test_get_genres(self):
-        # return an empty list
-        brain = utils.FakeBrain()
-        genres = self.view.get_genres(brain)
-        self.assertIsInstance(genres, list)
-        self.assertEqual(len(genres), 0)
-
-    def test_get_keywords(self):
-        brain = utils.FakeBrain()
-        self.view.settings.keywords_mapping = ['economie|economy']
-        brain.Subject.append('economie')
-        brain.Subject.append('non traduit')
-        keywords = self.view.get_keywords(brain)
-        self.assertTrue(len(keywords), 1)
-        self.assertIn('economy', keywords)
-
-
-class TestIntegration(base.TestCase):
-
-    def test_news(self):
-        pass

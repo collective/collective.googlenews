@@ -133,4 +133,3 @@ class FakeDexterityContext(FakeContext):
 class FakeSettings(object):
     def __init__(self):
         self.portal_types = ['News Item']
-        self.keywords_mapping = []

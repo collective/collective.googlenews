@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from collective.googlenews.interfaces import GoogleNewsSettings
-from collective.googlenews.logger import logger
 from datetime import date
 from DateTime import DateTime
 from plone.registry.interfaces import IRegistry
@@ -52,54 +51,15 @@ class GoogleNewsSiteMap(BrowserView):
     def brain2news(self, brain, name=''):
         language = self.get_language(brain)
         publication_date = self.get_publication_date(brain)
-        keywords = self.get_keywords(brain)
-        genres = self.get_genres(brain)
         title = self.get_title(brain)
         url = self.get_url(brain)
 
         return {'loc': url,
                 'name': name,
                 'language': language,
-                'access': '',
-                'genres': genres,
                 'publication_date': publication_date,
                 'title': title,
-                'keywords': keywords}
-
-    def get_genres(self, brain):
-        """Return a list of genres for a news brain
-        each genre must be in
-            * PressRelease
-            * Satire
-            * Blog
-            * OpEd
-            * Opinion
-            * UserGenerated
-        """
-        return []
-
-    def get_keywords(self, brain):
-        """return a list of keywords
-        please check the documentation at
-        http://support.google.com/news/publisher/bin/answer.py?
-            hl=en&answer=116037
-        """
-        raw_mapping = self.settings.keywords_mapping
-        mapping = {}
-        for row in raw_mapping:
-            row_splited = row.split('|')
-            if not len(row_splited) == 2:
-                logger.info('not valid mapping: %s' % row)
-                continue
-            mapping[row_splited[0]] = row_splited[1]
-        if mapping:
-            keywords = []
-            for keyword in brain.Subject:
-                if keyword in mapping:
-                    keywords.append(mapping[keyword])
-        else:
-            keywords = brain.Subject
-        return ', '.join(keywords)
+                }
 
     def get_publication_date(self, brain):
         """return a formated date AAAA-MM-JJ

@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Keywords mapping feature was removed as the values on the ``<keywords>`` tag of Google News Sitemaps may be drawn from, but are not limited to, the list of existing Google News keywords (closes `#14`_).
+  [hvelarde]
+
 - Add support for Editors' Picks feeds (closes `#9`_).
   [rodfersou, hvelarde]
 
@@ -73,3 +76,4 @@ Changelog
 .. _`#3`: https://github.com/collective/collective.googlenews/issues/3
 .. _`#8`: https://github.com/collective/collective.googlenews/issues/8
 .. _`#9`: https://github.com/collective/collective.googlenews/issues/9
+.. _`#14`: https://github.com/collective/collective.googlenews/issues/14
