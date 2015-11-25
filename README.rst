@@ -46,12 +46,6 @@ Go to the 'Site Setup' page in a Plone site and click on the 'Add-ons' link.
 
 Check the box next to ``collective.googlenews`` and click the 'Activate' button.
 
-Article URLs
-============
-
-URL need to display a three-digit number. This add-on override the url
-normalizer to add a unique id.
-
 SiteMap
 =======
 

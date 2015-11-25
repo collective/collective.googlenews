@@ -4,6 +4,10 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Do not change object id as Google News technical requirements no longer mentions the addition of a three-digit number;
+  URL only need to be unique and permanent, and that's the standard Plone behavior (closes `#16`_).
+  [hvelarde]
+
 - Keywords mapping feature was removed as the values on the ``<keywords>`` tag of Google News Sitemaps may be drawn from, but are not limited to, the list of existing Google News keywords (closes `#14`_).
   [hvelarde]
 
@@ -77,3 +81,4 @@ Changelog
 .. _`#8`: https://github.com/collective/collective.googlenews/issues/8
 .. _`#9`: https://github.com/collective/collective.googlenews/issues/9
 .. _`#14`: https://github.com/collective/collective.googlenews/issues/14
+.. _`#16`: https://github.com/collective/collective.googlenews/issues/16

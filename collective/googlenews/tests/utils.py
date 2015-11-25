@@ -19,14 +19,6 @@ class FakeContext(object):
         self.aq_inner.aq_explicit = self
         self._modified = 'modified date'
 
-    def _old_generateNewId(self):
-        return 'a-title'
-
-    def generateNewId(self, name=None, object=None):
-        from collective.googlenews import digitid
-        newid = digitid.generateNewId(self, name, object)
-        return newid
-
     def getId(self):
         return self.id
 
