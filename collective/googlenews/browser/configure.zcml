@@ -18,4 +18,14 @@
       layer="collective.googlenews.interfaces.IGoogleNewsLayer"
       />
 
+  <browser:viewlet
+      name="googlenews.meta"
+      for="collective.googlenews.behaviors.interfaces.IGoogleNews"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      class=".viewlets.GoogleNewsMetaTagViewlet"
+      layer="collective.googlenews.interfaces.IGoogleNewsLayer"
+      template="meta.pt"
+      permission="zope2.View"
+      />
+
 </configure>

@@ -14,6 +14,7 @@
   <include package="collective.monkeypatcher" />
   <include package="Products.CMFCore" file="permissions.zcml" />
 
+  <include package=".behaviors" />
   <include package=".browser" />
   <include package=".upgrades" />
 
@@ -31,6 +32,13 @@
       directory="profiles/uninstall"
       description="Removes support for Google News from your site."
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="collective.googlenews"
+      title="Import step for configuration not handled in XML files"
+      description="Add indexes to the portal_catalog."
+      handler="collective.googlenews.setuphandlers.import_various"
       />
 
   <browser:page

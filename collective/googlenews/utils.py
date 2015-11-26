@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from collective.googlenews import _
+from DateTime import DateTime
 from PIL import Image
+from plone import api
 from plone.formwidget.namedfile.converter import b64decode_file
 from zope.interface import Invalid
 
@@ -52,3 +54,13 @@ def validate_logo(value):
         raise Invalid(_(u'Image should have transparency layer.'))
 
     return True
+
+
+def _valid_as_standout_journalism():
+    """Check there are currently less than seven news articles marked as
+    standout journalism in the past calendar week.
+    """
+    catalog = api.portal.get_tool('portal_catalog')
+    date_range = dict(query=DateTime() - 7, range='max')
+    results = catalog(standout_journalism=True, effective=date_range)
+    return len(results) < 7

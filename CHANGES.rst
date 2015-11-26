@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Add behavior with ``standout_journalism`` and ``news_keywords`` fields (closes `#19`_).
+  [hvelarde]
+
 - The Google News sitemap is now implemented as a browser view accesible on ``INavigationRoot`` and independent of any content type (closes `#20`_).
   [rodfersou]
 
@@ -85,4 +88,5 @@ Changelog
 .. _`#9`: https://github.com/collective/collective.googlenews/issues/9
 .. _`#14`: https://github.com/collective/collective.googlenews/issues/14
 .. _`#16`: https://github.com/collective/collective.googlenews/issues/16
+.. _`#19`: https://github.com/collective/collective.googlenews/issues/19
 .. _`#20`: https://github.com/collective/collective.googlenews/issues/20
