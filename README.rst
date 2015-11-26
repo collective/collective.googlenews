@@ -46,26 +46,27 @@ Go to the 'Site Setup' page in a Plone site and click on the 'Add-ons' link.
 
 Check the box next to ``collective.googlenews`` and click the 'Activate' button.
 
-SiteMap
-=======
+Google News Sitemap
+===================
 
-This add-on add a **@@googlenews-sitemap.xml** view for topic content type. This
-view add some checks before loading items:
+This add-on adds a ``@@googlenews-sitemap.xml`` view accessible on ``INavigationRoot`` context.
+The view complies with Google News `sitemap guidelines`_,
+listing only URLs for news articles published in the last two days,
+and having no more than 1,000 items.
 
-* no more than 1000 items returned
-* items must have been published in the last two days
-* items are ordered on the effective date (reversed)
+By default, the News sitemap includes only instances of the ``News Item`` content type in your site.
+This can be changed into Google News configlet at 'Site Setup'.
 
-So you don't need to add criteria for these, but types should be set to News
-Item to be sure you are publishing news.
+Submitting your News sitemap
+----------------------------
 
-How to publish my website into Google News ?
-============================================
+You can submit your News sitemap using the `Google Search Console`_.
+Your News sitemap URL is something like:
 
-You need to have a topic instance in your website. By default in Plone
-**/news/aggregator** is the one. In the process you can provide the sitemap to
-help google to get the last news by providing the url
-``example.com/news/aggregator/@@googlenews-sitemap.xml``.
+    http://www.example.org/@@googlenews-sitemap.xml
+
+Note that your site must be already included in Google News.
+If it's not, you can apply for inclusion within the `Google News Publisher Center`_.
 
 Editors' Picks feeds
 ====================
@@ -95,4 +96,6 @@ The project is licensed under the GPLv2.
 .. _`Editors' Picks`: https://support.google.com/news/publisher/answer/1407682
 .. _`Google News Publisher Center`: https://partnerdash.google.com/partnerdash/d/news
 .. _`Google News`: https://news.google.com/
+.. _`Google Search Console`: https://www.google.com/webmasters/tools
+.. _`sitemap guidelines`: https://support.google.com/news/publisher/answer/74288
 .. _`technical requirements`: https://support.google.com/news/publisher/answer/2481358

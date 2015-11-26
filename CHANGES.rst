@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- The Google News sitemap is now implemented as a browser view accesible on ``INavigationRoot`` and independent of any content type (closes `#20`_).
+  [rodfersou]
+
 - Do not change object id as Google News technical requirements no longer mentions the addition of a three-digit number;
   URL only need to be unique and permanent, and that's the standard Plone behavior (closes `#16`_).
   [hvelarde]
@@ -82,3 +85,4 @@ Changelog
 .. _`#9`: https://github.com/collective/collective.googlenews/issues/9
 .. _`#14`: https://github.com/collective/collective.googlenews/issues/14
 .. _`#16`: https://github.com/collective/collective.googlenews/issues/16
+.. _`#20`: https://github.com/collective/collective.googlenews/issues/20

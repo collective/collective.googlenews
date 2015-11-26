@@ -1,33 +1,72 @@
 # -*- coding: utf-8 -*-
+from collective.googlenews.testing import INTEGRATION_TESTING
+from DateTime import DateTime
+from plone import api
 
-from collective.googlenews.tests import base
-from collective.googlenews.tests import utils
+import unittest
 
 
-class Test(base.UnitTestCase):
+class Test(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
 
     def setUp(self):
-        super(Test, self).setUp()
-        from collective.googlenews import sitemap
-        self.view = sitemap.GoogleNewsSiteMap(self.context, self.request)
-        self.view.portal_state = utils.FakePlonePortalState()
-        self.view.settings = utils.FakeSettings()
-        self.view.update()
+        self.portal = self.layer['portal']
+        request = self.layer['request']
+        self.view = api.content.get_view(
+            name='googlenews-sitemap.xml', context=self.portal, request=request)
 
-    def test_brain2news(self):
-        pass
+        with api.env.adopt_roles(['Manager']):
+            self.n1 = api.content.create(
+                type='News Item',
+                container=self.portal,
+                id='n1',
+                title='News Item 1',
+            )
+            self.n1.setEffectiveDate(DateTime())
+            self.n1.reindexObject()
+
+            self.n2 = api.content.create(
+                type='News Item',
+                container=self.portal,
+                id='n2',
+                title='News Item 2',
+            )
+            self.n2.setEffectiveDate(DateTime())
+            self.n2.reindexObject()
+
+            self.n3 = api.content.create(
+                type='News Item',
+                container=self.portal,
+                id='n3',
+                title='News Item 3',
+            )
+            self.n3.setEffectiveDate(DateTime() - 3)
+            self.n3.reindexObject()
 
     def test_news(self):
-        self.view.news()
+        expected = [
+            dict(
+                loc='http://nohost/plone/n2',
+                publication_date=self.n2.effective_date.ISO(),
+                title='News Item 2',
+            ),
+            dict(
+                loc='http://nohost/plone/n1',
+                publication_date=self.n1.effective_date.ISO(),
+                title='News Item 1',
+            ),
+        ]
+        self.assertEqual(self.view.news(), expected)
 
-    def test_get_query_constraints(self):
-        query = self.view.get_query_constraints()
-        self.assertIn('sort_limit', query)
-        self.assertEqual(query['sort_limit'], 1000)
-        self.assertIn('sort_on', query)
-        self.assertEqual(query['sort_on'], 'effective')
-        self.assertIn('sort_order', query)
-        self.assertEqual(query['sort_order'], 'reverse')
-        self.assertIn('effective', query)
-        effective = query['effective']['range']
-        self.assertIn(effective, 'min:max')
+    def test_portaltitle(self):
+        self.assertEqual(self.view.portal_title(), u'Plone site')
+
+    def test_portallanguage(self):
+        self.assertEqual(self.view.portal_language(), 'en')
+
+    def test_view(self):
+        render = self.view()
+        self.assertIn(u'<news:title>News Item 1</news:title>', render)
+        self.assertIn(u'<news:title>News Item 2</news:title>', render)
+        self.assertNotIn(u'<news:title>News Item 3</news:title>', render)
