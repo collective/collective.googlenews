@@ -61,7 +61,7 @@ Submitting your News sitemap
 ----------------------------
 
 You can submit your News sitemap using the `Google Search Console`_.
-Your News sitemap URL is something like:
+Your News sitemap URL is something like::
 
     http://www.example.org/@@googlenews-sitemap.xml
 
@@ -81,6 +81,36 @@ Adding an Editors' Picks feed
 * Add a logo that complies with the image guidelines
 * Create a collection that lists up to five news items
 * Submit the Atom feed associated with the collection into the `Google News Publisher Center`_
+
+Google News Behavior
+====================
+
+This add-on includes also a behavior to add two extra fields on Dexterity-based content types:
+
+Standout Journalism
+    Used to indicate this is a big story, or an extraordinary work of journalism.
+    You can mark as standout no more than seven news articles in the past calendar week.
+    Implements Google News ``standout`` metatag.
+Keywords
+    Used to specify keywords that are relevant to this news article.
+    Add one phrase or keyword on each line.
+    Implements Google News ``news_keywords`` metatag.
+
+Enabling the Google News Behavior
+---------------------------------
+
+* In 'Site Setup', select the Dexterity Content Types configlet
+* Select your content type
+* Go to Behaviors tab and select Google News
+
+A new fieldset called Google News will be present in the edit form of your content type.
+
+.. figure:: https://raw.github.com/collective/collective.googlenews/master/google-news-behavior.png
+    :align: center
+    :height: 380px
+    :width: 780px
+
+    Google News behavior in action.
 
 Contribute
 ==========

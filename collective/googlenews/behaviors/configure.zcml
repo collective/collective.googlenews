@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.googlenews">
+
+  <include package="plone.behavior" file="meta.zcml" />
+
+  <plone:behavior
+      title="Google News"
+      description="Extra fields to get most out of Google News."
+      provides="collective.googlenews.behaviors.interfaces.IGoogleNews"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      />
+
+</configure>
