@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Update Brazilian Portuguese and Spanish translations.
+  [hvelarde]
+
 - Add behavior with ``standout_journalism`` and ``news_keywords`` fields (closes `#19`_).
   [hvelarde]
 
@@ -28,8 +31,6 @@ Changelog
 
 - Drop support for Plone 4.0, Plone 4.1, Plone 4.2 and Python 2.6.
   [hvelarde]
-
-- Updated Spanish translation. [macagua]
 
 - Updated i18n support. [macagua]
 

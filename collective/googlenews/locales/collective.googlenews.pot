@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.googlenews\n"
-"POT-Creation-Date: 2015-08-29 19:53+0000\n"
+"POT-Creation-Date: 2015-11-27 17:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,44 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.googlenews\n"
 
-#: collective/googlenews/controlpanel.py:12
+#: ./collective/googlenews/behaviors/interfaces.py:52
+msgid "Can't mark this news article as standout. There are already seven marked in the past calendar week."
+msgstr ""
+
+#: ./collective/googlenews/behaviors/interfaces.py:19
+msgid "Google News"
+msgstr ""
+
+#: ./collective/googlenews/controlpanel.py:13
+#: ./collective/googlenews/profiles/default/controlpanel.xml
 msgid "Google News Settings"
 msgstr ""
 
-#: collective/googlenews/interfaces.py:27
-msgid "Keywords Mapping"
+#: ./collective/googlenews/interfaces.py:30
+msgid "Google News requires Editors' Picks feed logos to follow some <a href=\"{0}\">general guidelines</a>. This image will replace the logo in all Atom feeds on the site."
 msgstr ""
 
-#: collective/googlenews/interfaces.py:9
-msgid "Please read http://support.google.com/news/publisher/bin/answer.py?hl=fr&answer=116037"
+#: ./collective/googlenews/utils.py:36
+msgid "Image should be in PNG format."
 msgstr ""
 
-#: collective/googlenews/interfaces.py:21
+#: ./collective/googlenews/utils.py:45
+msgid "Image should have \"height beetween 20px and 40px and width equal 250px\" or \"height equal 40px and width beetween 125px and 250px\"."
+msgstr ""
+
+#: ./collective/googlenews/utils.py:54
+msgid "Image should have transparency layer."
+msgstr ""
+
+#: ./collective/googlenews/behaviors/interfaces.py:37
+msgid "Keywords"
+msgstr ""
+
+#: ./collective/googlenews/interfaces.py:29
+msgid "Logo image"
+msgstr ""
+
+#: ./collective/googlenews/interfaces.py:22
 msgid "Portal types"
 msgstr ""
 
@@ -37,8 +62,12 @@ msgstr ""
 msgid "Removes support for Google News from your site."
 msgstr ""
 
-#: collective/googlenews/interfaces.py:22
-msgid "Select portal types you want to apply digit id."
+#: ./collective/googlenews/interfaces.py:23
+msgid "Select portal types that will be considered news articles."
+msgstr ""
+
+#: ./collective/googlenews/behaviors/interfaces.py:25
+msgid "Standout Journalism"
 msgstr ""
 
 #: Profile title in configure.zcml
@@ -54,11 +83,17 @@ msgid "collective.googlenews uninstall"
 msgstr ""
 
 #. Default: "You can configure the settings of collective.googlenews add-on"
-#: collective/googlenews/controlpanel.py:13
+#: ./collective/googlenews/controlpanel.py:14
 msgid "controlpanel_desc"
 msgstr ""
 
-#: collective/googlenews/interfaces.py:29
-msgid "keyword|googlekeyword"
+#. Default: "Used to specify keywords that are relevant to this news article. Add one phrase or keyword on each line. Implements Google News <code>news_keywords</code> metatag."
+#: ./collective/googlenews/behaviors/interfaces.py:38
+msgid "help_news_keywords"
+msgstr ""
+
+#. Default: "Used to indicate this is a big story, or an extraordinary work of journalism. You can mark as standout no more than seven news articles in the past calendar week. Implements Google News <code>standout</code> metatag."
+#: ./collective/googlenews/behaviors/interfaces.py:26
+msgid "help_standout_journalism"
 msgstr ""
 

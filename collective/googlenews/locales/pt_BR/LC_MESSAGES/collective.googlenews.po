@@ -1,33 +1,60 @@
-# Héctor Velarde <hector.velarde@gmail.com>, 2012.
+# Héctor Velarde <hector.velarde@gmail.com>, 2012-2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.googlenews 1.0\n"
-"POT-Creation-Date: 2015-08-29 19:53+0000\n"
-"PO-Revision-Date: 2012-07-24 12:08-0300\n"
+"POT-Creation-Date: 2015-11-27 17:55+0000\n"
+"PO-Revision-Date: 2015-11-27 16:27-0200\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <https://github.com/collective>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 1.8.4\n"
 
-#: collective/googlenews/controlpanel.py:12
+#: collective/googlenews/behaviors/interfaces.py:52
+msgid "Can't mark this news article as standout. There are already seven marked in the past calendar week."
+msgstr "Não pode marcar"
+
+#: collective/googlenews/behaviors/interfaces.py:19
+msgid "Google News"
+msgstr "Google Notícias"
+
+#: collective/googlenews/controlpanel.py:13
+#: collective/googlenews/profiles/default/controlpanel.xml
 msgid "Google News Settings"
 msgstr "Configuração do Google News"
 
-#: collective/googlenews/interfaces.py:27
-msgid "Keywords Mapping"
-msgstr ""
+#: collective/googlenews/interfaces.py:30
+msgid "Google News requires Editors' Picks feed logos to follow some <a href=\"{0}\">general guidelines</a>. This image will replace the logo in all Atom feeds on the site."
+msgstr "Google Notícias precisa que os feeds das Sugestões dos editores sigam algumas <a href=\"{0}\">diretrizes gerais</a>. A imagem substituirá o logo em todos os feeds Atom do site."
 
-#: collective/googlenews/interfaces.py:9
-msgid "PleasereadPleasereadhttps://support.google.com/news/publisher/answer/116037"
-msgstr ""
+#: collective/googlenews/utils.py:36
+msgid "Image should be in PNG format."
+msgstr "A imagem deve estar em formato PNG."
 
-#: collective/googlenews/interfaces.py:21
+#: collective/googlenews/utils.py:45
+msgid "Image should have \"height beetween 20px and 40px and width equal 250px\" or \"height equal 40px and width beetween 125px and 250px\"."
+msgstr "A imagem deve ter altura entre 20px y 40px e largura igual a 250px ou altura igual a 40px e largura entre 125px e 250px."
+
+#: collective/googlenews/utils.py:54
+msgid "Image should have transparency layer."
+msgstr "A imagem deve ser transparente."
+
+#: collective/googlenews/behaviors/interfaces.py:37
+msgid "Keywords"
+msgstr "Palavras-chave"
+
+#: collective/googlenews/interfaces.py:29
+msgid "Logo image"
+msgstr "Logo"
+
+#: collective/googlenews/interfaces.py:22
 msgid "Portal types"
 msgstr "Tipos de conteúdo"
 
@@ -35,9 +62,13 @@ msgstr "Tipos de conteúdo"
 msgid "Removes support for Google News from your site."
 msgstr "Remove o suporte pelo Google News do seu site."
 
-#: collective/googlenews/interfaces.py:22
-msgid "Select portal types you want to apply digit id."
-msgstr "Selecione os tipos de conteúdo que você deseja aplicar o digit ID."
+#: collective/googlenews/interfaces.py:23
+msgid "Select portal types that will be considered news articles."
+msgstr "Informe os tipos de conteúdo que serão considerados como notícias."
+
+#: collective/googlenews/behaviors/interfaces.py:25
+msgid "Standout Journalism"
+msgstr "Destaques journalisticos"
 
 #: Profile title in configure.zcml
 msgid "Support for Google News"
@@ -52,11 +83,16 @@ msgid "collective.googlenews uninstall"
 msgstr "Remove collective.googlenews"
 
 #. Default: "You can configure the settings of collective.googlenews add-on"
-#: collective/googlenews/controlpanel.py:13
+#: collective/googlenews/controlpanel.py:14
 msgid "controlpanel_desc"
 msgstr "Você pode configurar as aqui o collective.googlenews."
 
-#: collective/googlenews/interfaces.py:29
-msgid "keyword|googlekeyword"
-msgstr ""
+#. Default: "Used to specify keywords that are relevant to this news article. Add one phrase or keyword on each line. Implements Google News <code>news_keywords</code> metatag."
+#: collective/googlenews/behaviors/interfaces.py:38
+msgid "help_news_keywords"
+msgstr "Usado para informar palavras-chave que são relevantes para esta notícia. Adicione uma frase ou palavra-chave por linha. Se implementa com a metatag <code>news_keywords</code>."
 
+#. Default: "Used to indicate this is a big story, or an extraordinary work of journalism. You can mark as standout no more than seven news articles in the past calendar week. Implements Google News <code>standout</code> metatag."
+#: collective/googlenews/behaviors/interfaces.py:26
+msgid "help_standout_journalism"
+msgstr "Usado para informar que este é um destaque journalistico. Até sete notícias podem ser destaques na última semana. Se implementa com a metatag <code>standout</code>."
