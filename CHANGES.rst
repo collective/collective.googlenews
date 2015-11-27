@@ -23,9 +23,6 @@ Changelog
 - Add support for Editors' Picks feeds (closes `#9`_).
   [rodfersou, hvelarde]
 
-- Get rid of the '.html' on the ids (closes `#8`_).
-  [hvelarde]
-
 - Update package dependencies.
   [hvelarde]
 
