@@ -4,6 +4,9 @@ Changelog
 2.0a1 (unreleased)
 -------------------
 
+- Hide uninstall profile.
+  [rodfersou]
+
 - Update Brazilian Portuguese and Spanish translations.
   [hvelarde]
 

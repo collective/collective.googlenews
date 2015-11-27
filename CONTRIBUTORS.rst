@@ -6,4 +6,5 @@ Contributors
 - Gonzalo Almeida
 - Franco Pellegrini
 - Leonardo J. Caballero G.
+- Rodrigo Ferreira de Souza
 
