@@ -1,8 +1,8 @@
 Changelog
 =========
 
-2.0a1 (unreleased)
--------------------
+2.0a1 (2015-11-27)
+------------------
 
 - Hide uninstall profile.
   [rodfersou]
