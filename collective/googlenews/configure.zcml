@@ -18,28 +18,7 @@
   <include package=".browser" />
   <include package=".upgrades" />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="Support for Google News"
-      directory="profiles/default"
-      description="To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="collective.googlenews uninstall"
-      directory="profiles/uninstall"
-      description="Removes support for Google News from your site."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
-  <genericsetup:importStep
-      name="collective.googlenews"
-      title="Import step for configuration not handled in XML files"
-      description="Add indexes to the portal_catalog."
-      handler="collective.googlenews.setuphandlers.import_various"
-      />
+  <include file="profiles.zcml" />
 
   <browser:page
     name="googlenews-controlpanel"
