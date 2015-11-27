@@ -40,15 +40,6 @@
     permission="cmf.ManagePortal"
     />
 
-  <browser:page
-    for="Products.ATContentTypes.interfaces.IATTopic"
-    name="googlenews-sitemap.xml"
-    class=".sitemap.GoogleNewsSiteMap"
-    template="sitemap.pt"
-    permission="zope2.View"
-    layer=".interfaces.IGoogleNewsLayer"
-    />
-
   <browser:resource
     name="googlenews.png"
     file="controlpanel.png"

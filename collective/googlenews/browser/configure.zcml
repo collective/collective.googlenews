@@ -1,5 +1,15 @@
 <configure xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="googlenews-sitemap.xml"
+      class=".sitemap.GoogleNewsSiteMap"
+      template="sitemap.pt"
+      permission="zope2.Public"
+      layer="collective.googlenews.interfaces.IGoogleNewsLayer"
+      />
+
   <browser:page
       for="*"
       name="googlenews-logo"
@@ -7,4 +17,5 @@
       permission="zope.Public"
       layer="collective.googlenews.interfaces.IGoogleNewsLayer"
       />
+
 </configure>
