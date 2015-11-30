@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collective.googlenews.behaviors.interfaces import IGoogleNews
 from collective.googlenews.interfaces import GoogleNewsSettings
 from DateTime import DateTime
 from plone import api
@@ -17,11 +18,16 @@ class GoogleNewsSiteMap(BrowserView):
 
     def _brain2news(self, brain):
         """Transform brain into sitemap-ready data."""
-        return {
+        news = {
             'loc': brain.getURL(),
             'publication_date': brain.EffectiveDate,
             'title': brain.Title,
+            'keywords': None
         }
+        obj = brain.getObject()
+        if IGoogleNews.providedBy(obj):
+            news['keywords'] = ', '.join(obj.news_keywords)
+        return news
 
     def news(self):
         """Return news articles for the News sitemap.

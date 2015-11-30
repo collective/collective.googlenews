@@ -10,6 +10,9 @@ Changelog
 2.0a1 (2015-11-27)
 ------------------
 
+- Include keywords tag on sitemap (closes `27`_).
+  [rodfersou]
+
 - Hide uninstall profile.
   [rodfersou]
 
@@ -97,3 +100,4 @@ Changelog
 .. _`#16`: https://github.com/collective/collective.googlenews/issues/16
 .. _`#19`: https://github.com/collective/collective.googlenews/issues/19
 .. _`#20`: https://github.com/collective/collective.googlenews/issues/20
+.. _`#27`: https://github.com/collective/collective.googlenews/issues/27
