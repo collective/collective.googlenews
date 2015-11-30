@@ -20,10 +20,7 @@ def load_file(name, size=0):
 
 def encode_image(image):
     """Return image encoded in base64"""
-    return b64encode_file(
-        image,
-        load_file(image)
-    )
+    return b64encode_file(image, load_file(image))
 
 
 class AtomFeedViewTestCase(unittest.TestCase):
