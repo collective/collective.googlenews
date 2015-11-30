@@ -61,11 +61,11 @@ class Test(unittest.TestCase):
         ]
         self.assertEqual(self.view.news(), expected)
 
-    def test_portaltitle(self):
-        self.assertEqual(self.view.portal_title(), u'Plone site')
+    def test_get_portal_title(self):
+        self.assertEqual(self.view.get_portal_title(), u'Plone site')
 
-    def test_portallanguage(self):
-        self.assertEqual(self.view.portal_language(), 'en')
+    def test_get_portal_language(self):
+        self.assertEqual(self.view.get_portal_language(), 'en')
 
     def test_view(self):
         render = self.view()
