@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: 2015-11-27 17:55+0000\n"
-"PO-Revision-Date: 2015-11-27 16:16-0200\n"
+"PO-Revision-Date: 2015-11-30 12:50-0200\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: collective/googlenews/behaviors/interfaces.py:52
 msgid "Can't mark this news article as standout. There are already seven marked in the past calendar week."
-msgstr "Imposible marcar esta noticia como destacada. Ya existen siete noticias marcadas en la última semana."
+msgstr "Imposible marcar esta noticia como destacada. Ya existen siete noticias marcadas como destacadas en la última semana."
 
 #: collective/googlenews/behaviors/interfaces.py:19
 msgid "Google News"
@@ -31,7 +31,7 @@ msgstr "Google Noticias"
 #: collective/googlenews/controlpanel.py:13
 #: collective/googlenews/profiles/default/controlpanel.xml
 msgid "Google News Settings"
-msgstr "Configuración de Google News"
+msgstr "Google Noticias"
 
 #: collective/googlenews/interfaces.py:30
 msgid "Google News requires Editors' Picks feed logos to follow some <a href=\"{0}\">general guidelines</a>. This image will replace the logo in all Atom feeds on the site."
@@ -63,7 +63,7 @@ msgstr "Tipos de contenido"
 
 #: Profile description in configure.zcml
 msgid "Removes support for Google News from your site."
-msgstr "Elimina el soporte para Google News de su sitio."
+msgstr "Elimina el soporte para Google Noticias de su sitio."
 
 #: collective/googlenews/interfaces.py:23
 msgid "Select portal types that will be considered news articles."
@@ -75,11 +75,11 @@ msgstr "Periodismo sobresaliente"
 
 #: Profile title in configure.zcml
 msgid "Support for Google News"
-msgstr "Soporte para Google News"
+msgstr "Soporte para Google Noticias"
 
 #: Profile description in configure.zcml
 msgid "To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
-msgstr "Para incluir un sitio en Google News es necesario cumplir con ciertos requerimientos técnicos . Este paquete proporciona soporte para ello."
+msgstr "Para incluir un sitio en Google Noticias es necesario cumplir con ciertos requerimientos técnicos . Este paquete proporciona soporte para ello."
 
 #: Profile title in configure.zcml
 msgid "collective.googlenews uninstall"
@@ -93,9 +93,9 @@ msgstr "Aquí puede configurar el paquete collective.googlenews."
 #. Default: "Used to specify keywords that are relevant to this news article. Add one phrase or keyword on each line. Implements Google News <code>news_keywords</code> metatag."
 #: collective/googlenews/behaviors/interfaces.py:38
 msgid "help_news_keywords"
-msgstr "Se utiliza para indicar las palabras clave que son relevantes para esta notícia. Agregue una frase o palabra clave en cada línea. Se implementa usando la metatag <code>news_keywords</code>."
+msgstr "Se utiliza para indicar las palabras clave que son relevantes para esta notícia. Agregue una frase o palabra clave en cada línea. Implementa la metatag <code>news_keywords</code> de Google Noticias."
 
 #. Default: "Used to indicate this is a big story, or an extraordinary work of journalism. You can mark as standout no more than seven news articles in the past calendar week. Implements Google News <code>standout</code> metatag."
 #: collective/googlenews/behaviors/interfaces.py:26
 msgid "help_standout_journalism"
-msgstr "Se utiliza para indicar que esta es una obra de periodismo sobresaliente. Se pueden marcar como sobresalientes hasta un máximo de siete noticias en la última semana. Se implementa usando la metatag <code>standout</code> ."
+msgstr "Se utiliza para indicar que esta es una obra de periodismo sobresaliente. Se pueden marcar como sobresalientes hasta un máximo de siete noticias en la última semana. Implementa la metatag <code>standout</code> de Google Noticias."
