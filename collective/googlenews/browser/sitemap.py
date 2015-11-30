@@ -49,13 +49,14 @@ class GoogleNewsSiteMap(BrowserView):
         )
         return [self._brain2news(b) for b in results]
 
-    def portal_title(self):
+    def get_portal_title(self):
         """Return the portal title."""
         return api.portal.get().Title()
 
-    def portal_language(self):
+    def get_portal_language(self):
         """Return the portal language."""
-        language = api.portal.get().language
+        site_properties = api.portal.get_tool('portal_properties').site_properties
+        language = site_properties.getProperty('default_language')
         if language in ('zh-cn', 'zh-tw'):
             return language
         return language[:2]

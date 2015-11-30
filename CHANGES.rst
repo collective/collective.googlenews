@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ------------------
 
+- News sitemap publication language was fixed.
+  [hvelarde]
+
 - The viewlet associated with the Google News behavior was rising ``TypeError`` on empty ``news_keywords``; this is now fixed.
   [hvelarde]
 

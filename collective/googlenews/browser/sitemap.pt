@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:tal="http://xml.zope.org/namespaces/tal"
-        tal:define="portal_title view/portal_title;
-                    portal_language view/portal_language">
+        tal:define="publication_title view/get_portal_title;
+                    publication_language view/get_portal_language">
   <url tal:repeat="news view/news">
     <loc tal:content="news/loc">http://www.example.org/business/article55.html</loc>
     <news:news>
       <news:publication>
-        <news:name tal:content="portal_title">Journal L'Exemple</news:name>
-        <news:language tal:content="portal_language">fr</news:language>
+        <news:name tal:content="publication_title">Journal L'Exemple</news:name>
+        <news:language tal:content="publication_language">fr</news:language>
       </news:publication>
       <news:access tal:replace="nothing">Abonnement</news:access>
       <news:genres tal:replace="nothing">CommuniquéPresse, Blog</news:genres>
