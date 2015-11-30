@@ -39,7 +39,7 @@ msgid "Image should be in PNG format."
 msgstr "A imagem deve estar em formato PNG."
 
 #: collective/googlenews/utils.py:45
-msgid "Image should have \"height beetween 20px and 40px and width equal 250px\" or \"height equal 40px and width beetween 125px and 250px\"."
+msgid "Image should have height beetween 20px and 40px and width equal 250px or height equal 40px and width beetween 125px and 250px."
 msgstr "A imagem deve ter altura entre 20px y 40px e largura igual a 250px ou altura igual a 40px e largura entre 125px e 250px."
 
 #: collective/googlenews/utils.py:54

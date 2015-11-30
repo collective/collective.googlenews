@@ -43,9 +43,8 @@ def validate_logo(value):
     if not((20 <= height <= 40 and width == 250) or
        (height == 40 and 125 <= width <= 250)):
         raise Invalid(_(
-            u'Image should have "height beetween 20px and 40px and width '
-            u'equal 250px" or "height equal 40px and width beetween 125px '
-            u'and 250px".'
+            u'Image should have height beetween 20px and 40px and width equal 250px '
+            u'or height equal 40px and width beetween 125px and 250px.'
         ))
 
     # Check image transparency.
