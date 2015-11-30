@@ -10,9 +10,11 @@ class GoogleNewsSettingsEditForm(base.RegistryEditForm):
     """Google News control panel settings form."""
 
     schema = GoogleNewsSettings
-    label = _(u"Google News Settings")
-    description = _(u"controlpanel_desc",
-                    default=u"You can configure the settings of collective.googlenews add-on")
+    label = _(u'Google News Settings')
+    description = _(
+        u'controlpanel_desc',
+        default=u'You can configure the settings of collective.googlenews add-on',
+    )
 
     def updateFields(self):
         """Update logo widget."""
