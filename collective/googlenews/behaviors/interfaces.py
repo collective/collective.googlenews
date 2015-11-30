@@ -43,7 +43,6 @@ class IGoogleNews(model.Schema):
         ),
         value_type=schema.TextLine(),
         required=False,
-        missing_value=(),
     )
 
     @invariant

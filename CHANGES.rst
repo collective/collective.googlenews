@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ------------------
 
+- The viewlet associated with the Google News behavior was rising ``TypeError`` on empty ``news_keywords``; this is now fixed.
+  [hvelarde]
+
 - An upgrade step is now provided to add catalog indexes and metadata for Google News behavior fields.
   [hvelarde]
 

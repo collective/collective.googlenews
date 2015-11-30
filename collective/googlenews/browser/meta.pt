@@ -2,4 +2,5 @@
         tal:condition="context/standout_journalism"
         tal:attributes="content context/absolute_url" />
     <meta name="news_keywords" content="World Cup, Brazil 2014, Spain vs Netherlands"
+        tal:condition="context/news_keywords"
         tal:attributes="content view/news_keywords" />
