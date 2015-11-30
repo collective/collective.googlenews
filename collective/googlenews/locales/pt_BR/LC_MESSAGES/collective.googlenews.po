@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collective.googlenews 1.0\n"
 "POT-Creation-Date: 2015-11-27 17:55+0000\n"
-"PO-Revision-Date: 2015-11-27 16:27-0200\n"
+"PO-Revision-Date: 2015-11-30 12:48-0200\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <https://github.com/collective>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: collective/googlenews/behaviors/interfaces.py:52
 msgid "Can't mark this news article as standout. There are already seven marked in the past calendar week."
-msgstr "Não pode marcar"
+msgstr "Não pode marcar esta notícia como destaque. Existem já sete noticias marcadas como destaques na última semana."
 
 #: collective/googlenews/behaviors/interfaces.py:19
 msgid "Google News"
@@ -28,11 +28,11 @@ msgstr "Google Notícias"
 #: collective/googlenews/controlpanel.py:13
 #: collective/googlenews/profiles/default/controlpanel.xml
 msgid "Google News Settings"
-msgstr "Configuração do Google News"
+msgstr "Google Notícias"
 
 #: collective/googlenews/interfaces.py:30
 msgid "Google News requires Editors' Picks feed logos to follow some <a href=\"{0}\">general guidelines</a>. This image will replace the logo in all Atom feeds on the site."
-msgstr "Google Notícias precisa que os feeds das Sugestões dos editores sigam algumas <a href=\"{0}\">diretrizes gerais</a>. A imagem substituirá o logo em todos os feeds Atom do site."
+msgstr "Google Notícias precisa que os feeds das Sugestões dos Editores sigam algumas <a href=\"{0}\">diretrizes gerais</a>. A imagem substituirá o logo em todos os feeds Atom do site."
 
 #: collective/googlenews/utils.py:36
 msgid "Image should be in PNG format."
@@ -72,11 +72,11 @@ msgstr "Destaques journalisticos"
 
 #: Profile title in configure.zcml
 msgid "Support for Google News"
-msgstr "Suporte pelo Google News"
+msgstr "Suporte para Google News"
 
 #: Profile description in configure.zcml
 msgid "To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
-msgstr "Para incluir um site no Google News você precisa cumprir com certos requerimentos técnicos. Este pacote proporciona esse suporte."
+msgstr "Para incluir um site no Google News você precisa cumprir com certas diretrizes técnicas. Este pacote proporciona esse suporte."
 
 #: Profile title in configure.zcml
 msgid "collective.googlenews uninstall"
@@ -85,14 +85,14 @@ msgstr "Remove collective.googlenews"
 #. Default: "You can configure the settings of collective.googlenews add-on"
 #: collective/googlenews/controlpanel.py:14
 msgid "controlpanel_desc"
-msgstr "Você pode configurar as aqui o collective.googlenews."
+msgstr "Você pode configurar aqui o collective.googlenews."
 
 #. Default: "Used to specify keywords that are relevant to this news article. Add one phrase or keyword on each line. Implements Google News <code>news_keywords</code> metatag."
 #: collective/googlenews/behaviors/interfaces.py:38
 msgid "help_news_keywords"
-msgstr "Usado para informar palavras-chave que são relevantes para esta notícia. Adicione uma frase ou palavra-chave por linha. Se implementa com a metatag <code>news_keywords</code>."
+msgstr "Usado para informar palavras-chave que são relevantes para esta notícia. Adicione uma frase ou palavra-chave por linha. Implementa a metatag <code>news_keywords</code> do Google Notícias."
 
 #. Default: "Used to indicate this is a big story, or an extraordinary work of journalism. You can mark as standout no more than seven news articles in the past calendar week. Implements Google News <code>standout</code> metatag."
 #: collective/googlenews/behaviors/interfaces.py:26
 msgid "help_standout_journalism"
-msgstr "Usado para informar que este é um destaque journalistico. Até sete notícias podem ser destaques na última semana. Se implementa com a metatag <code>standout</code>."
+msgstr "Usado para informar que este é um destaque journalistico. Até sete notícias podem ser destaques na última semana. Implementa a metatag <code>standout</code> do Google Notícias."

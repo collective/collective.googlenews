@@ -4,14 +4,18 @@ Changelog
 2.0a2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- The viewlet associated with the Google News behavior was rising ``TypeError`` on empty ``news_keywords``; this is now fixed.
+  [hvelarde]
+
+- An upgrade step is now provided to add catalog indexes and metadata for Google News behavior fields.
+  [hvelarde]
+
+- Include keywords tag on sitemap (closes `27`_).
+  [rodfersou]
 
 
 2.0a1 (2015-11-27)
 ------------------
-
-- Include keywords tag on sitemap (closes `27`_).
-  [rodfersou]
 
 - Hide uninstall profile.
   [rodfersou]
