@@ -1,0 +1,14 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="collective.googlenews">
+  <genericsetup:upgradeSteps
+      source="1001"
+      destination="1002"
+      profile="collective.googlenews:default">
+    <genericsetup:upgradeStep title="Update portal catalog"
+        description="Add catalog indexes and metadata for Google News behavior fields"
+        handler=".update_portal_catalog"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

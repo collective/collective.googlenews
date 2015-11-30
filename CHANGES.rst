@@ -4,7 +4,8 @@ Changelog
 2.0a2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- An upgrade step is now provided to add catalog indexes and metadata for Google News behavior fields.
+  [hvelarde]
 
 
 2.0a1 (2015-11-27)
