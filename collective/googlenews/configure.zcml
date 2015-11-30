@@ -3,9 +3,7 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:monkey="http://namespaces.plone.org/monkey"
-    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="collective.googlenews">
 
   <five:registerPackage package="." />
@@ -27,10 +25,7 @@
     permission="cmf.ManagePortal"
     />
 
-  <browser:resource
-    name="googlenews.png"
-    file="controlpanel.png"
-    />
+  <browser:resource name="googlenews.png" file="controlpanel.png" />
 
   <monkey:patch
     description="Return Google News logo url if available, else return portal logo"
@@ -39,4 +34,5 @@
     replacement=".patches.patched_logo"
     handler=".patches.apply_patched_logo"
     />
+
 </configure>

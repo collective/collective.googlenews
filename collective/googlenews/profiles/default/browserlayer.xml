@@ -1,4 +1,7 @@
+<?xml version="1.0"?>
 <layers>
-    <layer name="collective.googlenews"
-           interface="collective.googlenews.interfaces.IGoogleNewsLayer" />
+  <layer
+      name="collective.googlenews"
+      interface="collective.googlenews.interfaces.IGoogleNewsLayer"
+      />
 </layers>
