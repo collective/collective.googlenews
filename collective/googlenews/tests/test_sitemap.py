@@ -50,11 +50,13 @@ class Test(unittest.TestCase):
                 loc='http://nohost/plone/n2',
                 publication_date=self.n2.effective_date.ISO(),
                 title='News Item 2',
+                keywords=None,
             ),
             dict(
                 loc='http://nohost/plone/n1',
                 publication_date=self.n1.effective_date.ISO(),
                 title='News Item 1',
+                keywords=None,
             ),
         ]
         self.assertEqual(self.view.news(), expected)

@@ -15,7 +15,7 @@
       <news:genres tal:replace="nothing">CommuniquéPresse, Blog</news:genres>
       <news:publication_date tal:content="news/publication_date">2015-11-26T10:56:30-02:00</news:publication_date>
       <news:title tal:content="news/title">Entreprises A, B dans les négociations de fusion</news:title>
-      <news:keywords tal:replace="nothing">business, fusion, acquisition, A, B</news:keywords>
+      <news:keywords tal:content="news/keywords" tal:condition="news/keywords">business, fusion, acquisition, A, B</news:keywords>
     </news:news>
   </url>
 </urlset>
