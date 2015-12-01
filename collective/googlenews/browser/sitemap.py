@@ -36,6 +36,7 @@ class GoogleNewsSiteMap(BrowserView):
         for news articles published in the last two days, and returning
         no more than 1,000 items.
         """
+        limit = 1000
         portal_types = api.portal.get_registry_record(
             GoogleNewsSettings.__identifier__ + '.portal_types')
 
@@ -44,10 +45,10 @@ class GoogleNewsSiteMap(BrowserView):
             portal_type=portal_types,
             sort_on='effective',
             sort_order='reverse',
-            sort_limit=1000,
+            sort_limit=limit,
             effective=dict(query=DateTime() - 2, range='min'),
         )
-        return [self._brain2news(b) for b in results]
+        return [self._brain2news(b) for b in results[:limit]]
 
     def get_portal_title(self):
         """Return the portal title."""
