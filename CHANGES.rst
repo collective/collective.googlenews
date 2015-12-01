@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0a2 (unreleased)
+2.0b1 (2015-12-01)
 ------------------
 
 - Standout journalism field validator was rewritten to avoid false positives (closes `#30`_).
