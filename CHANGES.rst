@@ -4,7 +4,7 @@ Changelog
 2.0a2 (unreleased)
 ------------------
 
-- Standout journalism field validator was rewritten to avoid false positives (closes `30`_).
+- Standout journalism field validator was rewritten to avoid false positives (closes `#30`_).
   [hvelarde]
 
 - News sitemap publication language was fixed.
@@ -16,7 +16,7 @@ Changelog
 - An upgrade step is now provided to add catalog indexes and metadata for Google News behavior fields.
   [hvelarde]
 
-- Include keywords tag on sitemap (closes `27`_).
+- Include keywords tag on sitemap (closes `#27`_).
   [rodfersou]
 
 
