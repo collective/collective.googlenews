@@ -31,13 +31,3 @@ class BehaviorsTestCase(unittest.TestCase):
 
         self.assertTrue(self.dummy1.standout_journalism)
         self.assertEqual(len(self.dummy1.news_keywords), 3)
-
-    def test_validator(self):
-        from collective.googlenews.utils import _valid_as_standout_journalism
-        self.assertTrue(_valid_as_standout_journalism())
-
-        for i in range(0, 7):
-            api.content.create(
-                self.folder, 'Dexterity Item', str(i), standout_journalism=True)
-
-        self.assertFalse(_valid_as_standout_journalism())

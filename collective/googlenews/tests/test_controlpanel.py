@@ -58,7 +58,7 @@ class RegistryTestCase(unittest.TestCase):
 
     def test_record_portal_types(self):
         self.assertTrue(hasattr(self.settings, 'portal_types'))
-        self.assertListEqual(self.settings.portal_types, ['News Item'])
+        self.assertListEqual(self.settings.portal_types, ['Dexterity Item'])
 
     def test_logo_record_in_registry(self):
         self.assertTrue(hasattr(self.settings, 'logo'))

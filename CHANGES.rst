@@ -4,6 +4,9 @@ Changelog
 2.0a2 (unreleased)
 ------------------
 
+- Standout journalism field validator was rewritten to avoid false positives (closes `30`_).
+  [hvelarde]
+
 - News sitemap publication language was fixed.
   [hvelarde]
 
@@ -108,3 +111,4 @@ Changelog
 .. _`#19`: https://github.com/collective/collective.googlenews/issues/19
 .. _`#20`: https://github.com/collective/collective.googlenews/issues/20
 .. _`#27`: https://github.com/collective/collective.googlenews/issues/27
+.. _`#30`: https://github.com/collective/collective.googlenews/issues/30
