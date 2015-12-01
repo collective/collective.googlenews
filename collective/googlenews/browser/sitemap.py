@@ -25,7 +25,7 @@ class GoogleNewsSiteMap(BrowserView):
             'keywords': None
         }
         obj = brain.getObject()
-        if IGoogleNews.providedBy(obj):
+        if IGoogleNews.providedBy(obj) and obj.news_keywords:
             news['keywords'] = ', '.join(obj.news_keywords)
         return news
 
