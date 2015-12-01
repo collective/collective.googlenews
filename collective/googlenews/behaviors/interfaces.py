@@ -47,7 +47,8 @@ class IGoogleNews(model.Schema):
 
     @invariant
     def validate_standout_journalism(data):
-        if not _valid_as_standout_journalism():
+        context = data.__context__  # this will be None when adding
+        if not _valid_as_standout_journalism(context):
             raise Invalid(_(
                 u"Can't mark this news article as standout. "
                 u'There are already seven marked in the past calendar week.'

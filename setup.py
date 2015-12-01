@@ -58,7 +58,8 @@ setup(name='collective.googlenews',
       extras_require={
         'test': [
             'AccessControl',
-            'plone.app.testing',
+            'plone.app.robotframework',
+            'plone.app.testing [robot]',
             'plone.browserlayer',
             'plone.registry',
             'zope.component',

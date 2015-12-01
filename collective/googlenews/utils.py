@@ -55,11 +55,41 @@ def validate_logo(value):
     return True
 
 
-def _valid_as_standout_journalism():
-    """Check there are currently less than seven news articles marked as
-    standout journalism in the past calendar week.
+def _valid_as_standout_journalism(context):
+    """Check there are currently less than seven published news articles
+    marked as standout journalism in the past calendar week.
+
+    :param context: the object being validated
+    :type context: Dexterity-based content type instance or None
+    :returns: True if we can mark this object as standout journalism
+    :rtype: bool
     """
+    record = 'collective.googlenews.interfaces.GoogleNewsSettings.portal_types'
+    portal_types = api.portal.get_registry_record(record)
     catalog = api.portal.get_tool('portal_catalog')
-    date_range = dict(query=DateTime() - 7, range='max')
-    results = catalog(standout_journalism=True, effective=date_range)
+    query = dict(
+        portal_type=portal_types,
+        standout_journalism=True,
+        effective=dict(query=DateTime() - 7, range='min'),
+        review_state='published',
+    )
+    results = catalog(**query)
+
+    # to validate, we will need a list of object UUIDs
+    results = [b.getObject() for b in results]
+    results = [api.content.get_uuid(o) for o in results]
+
+    # we could have false positives if we are editing an item already marked
+    if context is not None:  # we are not adding, but editing
+        uuid = api.content.get_uuid(context)
+        if uuid in results:  # if the UUID is there, ignore it
+            results.remove(uuid)
+
+    # XXX: there's still a potential source of problems here:
+    #      suppose we have six news articles marked as standout and we
+    #      create another two; as they are not published yet, both can
+    #      be marked and published after that.
+    #      so, we ended with eight news articles marked as standout.
+    #      we should work with workflow scripts to avoid that.
+
     return len(results) < 7
