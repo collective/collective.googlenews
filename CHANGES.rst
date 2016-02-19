@@ -4,7 +4,8 @@ Changelog
 2.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Refactor logo validation to ensure image is in PNG format.
+  [hvelarde]
 
 
 2.0b1 (2015-12-01)
