@@ -56,8 +56,7 @@ class GoogleNewsSiteMap(BrowserView):
 
     def get_portal_language(self):
         """Return the portal language."""
-        site_properties = api.portal.get_tool('portal_properties').site_properties
-        language = site_properties.getProperty('default_language')
+        language = api.portal.get_default_language()
         if language in ('zh-cn', 'zh-tw'):
             return language
         return language[:2]

@@ -1,14 +1,25 @@
 # -*- coding: utf-8 -*-
+"""Setup testing infrastructure.
+
+For Plone 5 we need to install plone.app.contenttypes.
+"""
 from plone import api
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
-from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
 import os
+import pkg_resources
 import shutil
+
+try:
+    pkg_resources.get_distribution('plone.app.contenttypes')
+except pkg_resources.DistributionNotFound:
+    from plone.app.testing import PLONE_FIXTURE
+else:
+    from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE as PLONE_FIXTURE
 
 IMAGES = [
     'logo_plone_not_transparent.png',
