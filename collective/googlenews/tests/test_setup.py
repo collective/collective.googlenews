@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.googlenews.config import PROJECTNAME
+from collective.googlenews.interfaces import IGoogleNewsLayer
 from collective.googlenews.testing import INTEGRATION_TESTING
 from plone import api
 from plone.browserlayer.utils import registered_layers
@@ -19,8 +20,7 @@ class InstallTestCase(unittest.TestCase):
         self.assertTrue(qi.isProductInstalled(PROJECTNAME))
 
     def test_browserlayer_installed(self):
-        layers = [l.getName() for l in registered_layers()]
-        self.assertIn('IGoogleNewsLayer', layers)
+        self.assertIn(IGoogleNewsLayer, registered_layers())
 
 
 class UninstallTestCase(unittest.TestCase):
@@ -37,5 +37,4 @@ class UninstallTestCase(unittest.TestCase):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
 
     def test_browserlayer_removed(self):
-        layers = [l.getName() for l in registered_layers()]
-        self.assertNotIn('IGoogleNewsLayer', layers)
+        self.assertNotIn(IGoogleNewsLayer, registered_layers())
