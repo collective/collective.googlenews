@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 from collective.googlenews import _
+from cStringIO import StringIO
 from DateTime import DateTime
 from PIL import Image
 from plone import api
 from plone.formwidget.namedfile.converter import b64decode_file
 from zope.interface import Invalid
-
-import cStringIO
-import os
 
 
 def validate_logo(value):
@@ -30,13 +28,11 @@ def validate_logo(value):
 
     filename, data = b64decode_file(value)
 
-    # check extension
-    name, extension = os.path.splitext(filename)
-    if extension != u'.png':
-        raise Invalid(_(u'Image should be in PNG format.'))
+    img = Image.open(StringIO(data))
 
-    stream = cStringIO.StringIO(data)
-    img = Image.open(stream)
+    # check format
+    if img.format != 'PNG':
+        raise Invalid(_(u'Image should be in PNG format.'))
 
     # Check image size
     width, height = img.size
