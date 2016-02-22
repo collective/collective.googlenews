@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0b2 (unreleased)
+2.0b2 (2016-02-22)
 ------------------
 
 - Package is now compatible with Plone 5.
