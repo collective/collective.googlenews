@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-from plone import api
 from collective.googlenews.config import PROJECTNAME
 from collective.googlenews.testing import INTEGRATION_TESTING
+from plone import api
 
 import unittest
+
 
 PROFILE = PROJECTNAME + ':default'
 
