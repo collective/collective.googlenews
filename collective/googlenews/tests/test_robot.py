@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collective.googlenews.testing import IS_PLONE_5
 from collective.googlenews.testing import ROBOT_TESTING
 from plone.testing import layered
 
@@ -9,6 +10,10 @@ import unittest
 dirname = os.path.dirname(__file__)
 files = os.listdir(dirname)
 tests = [f for f in files if f.startswith('test_') and f.endswith('.robot')]
+
+# skip RobotFramework tests in Plone 5
+if IS_PLONE_5:
+    tests = []
 
 
 def test_suite():

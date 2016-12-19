@@ -11,17 +11,17 @@ env:
 matrix:
   fast_finish: true
 install:
-- sed -ie "s#test-4.3#test-$PLONE_VERSION#" buildout.cfg
+- sed -ie "s#4.3.x.cfg#$PLONE_VERSION.x.cfg#" buildout.cfg
 - python bootstrap.py
-- bin/buildout annotate
-- bin/buildout -Nq
+- bin/buildout buildout:test-eggs=$TEST_EGGS annotate
+- bin/buildout buildout:test-eggs=$TEST_EGGS
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - firefox -v
 script:
 - bin/code-analysis
-- test $PLONE_VERSION == 5.0 && bin/test --layer=!Robot || bin/test
+- bin/test
 after_success:
 - bin/createcoverage -t "--layer=!Robot"
 - pip install --upgrade coveralls

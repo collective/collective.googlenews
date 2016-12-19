@@ -21,6 +21,9 @@ except pkg_resources.DistributionNotFound:
 else:
     from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE as PLONE_FIXTURE
 
+
+IS_PLONE_5 = api.env.plone_version().startswith('5')
+
 IMAGES = [
     'logo_plone_not_transparent.png',
     'logo_plone_ok.png',
