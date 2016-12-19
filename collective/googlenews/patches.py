@@ -17,7 +17,7 @@ def logo(self):
     return '{0}/@@googlenews-logo/{1}'.format(
         api.portal.get().absolute_url(), filename)
 
-patched_logo = lambda: property(logo)
+patched_logo = lambda: property(logo)  # noqa: E731
 
 
 def apply_patched_logo(scope, original, replacement):

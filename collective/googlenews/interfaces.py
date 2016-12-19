@@ -5,6 +5,7 @@ from plone.directives import form
 from zope import schema
 from zope.interface import Interface
 
+
 EDITORS_PICKS_LINK = u'https://support.google.com/news/publisher/answer/1407682'
 
 
