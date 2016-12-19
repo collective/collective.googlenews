@@ -8,6 +8,7 @@ cache:
 addons:
   firefox: latest-esr
 env:
+- PLONE_VERSION=4.2 TEST_EGGS=buildout:test-eggs=Pillow VERSIONS=versions:plone.formwidget.namedfile=1.0.13
 - PLONE_VERSION=4.3
 - PLONE_VERSION=5.0
 - PLONE_VERSION=5.1
@@ -16,8 +17,8 @@ matrix:
 install:
 - sed -ie "s#4.3.x.cfg#$PLONE_VERSION.x.cfg#" buildout.cfg
 - python bootstrap.py
-- bin/buildout buildout:test-eggs=$TEST_EGGS annotate
-- bin/buildout buildout:test-eggs=$TEST_EGGS
+- bin/buildout $TEST_EGGS $VERSIONS annotate
+- bin/buildout $TEST_EGGS $VERSIONS
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
