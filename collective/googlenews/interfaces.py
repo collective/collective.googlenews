@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.googlenews import _
 from collective.googlenews.utils import validate_logo
-from plone.directives import form
+from plone.supermodel import model
 from zope import schema
 from zope.interface import Interface
 
@@ -14,7 +14,7 @@ class IGoogleNewsLayer(Interface):
     """Browser layer for this addon"""
 
 
-class GoogleNewsSettings(form.Schema):
+class GoogleNewsSettings(model.Schema):
 
     """Main settings of this addon"""
 

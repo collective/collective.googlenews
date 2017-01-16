@@ -4,7 +4,8 @@ Changelog
 2.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove dependency on five.grok (closes `#34`_).
+  [rodfersou]
 
 
 2.0b2 (2016-02-22)
@@ -128,3 +129,4 @@ Changelog
 .. _`#20`: https://github.com/collective/collective.googlenews/issues/20
 .. _`#27`: https://github.com/collective/collective.googlenews/issues/27
 .. _`#30`: https://github.com/collective/collective.googlenews/issues/30
+.. _`#34`: https://github.com/collective/collective.googlenews/issues/34

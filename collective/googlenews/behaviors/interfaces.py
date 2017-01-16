@@ -1,7 +1,7 @@
 # coding: utf-8
 from collective.googlenews import _
 from collective.googlenews.utils import _valid_as_standout_journalism
-from plone.directives import form
+from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
 from zope.interface import Invalid
@@ -9,7 +9,7 @@ from zope.interface import invariant
 from zope.interface import provider
 
 
-@provider(form.IFormFieldProvider)
+@provider(IFormFieldProvider)
 class IGoogleNews(model.Schema):
 
     """Behavior interface to add some Google News features."""
