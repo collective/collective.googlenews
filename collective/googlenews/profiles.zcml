@@ -22,13 +22,6 @@
       post_handler="collective.googlenews.setuphandlers.uninstall_post_handler"
       />
 
- <genericsetup:importStep
-      name="collective.googlenews"
-      title="Import step for configuration not handled in XML files"
-      description="Add indexes to the portal_catalog."
-      handler="collective.googlenews.setuphandlers.import_various"
-      />
-
   <utility factory=".setuphandlers.HiddenProfiles" name="collective.googlenews" />
   <utility factory=".setuphandlers.HiddenProducts" name="collective.googlenews" />
 

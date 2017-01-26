@@ -32,7 +32,7 @@ class Empty:
     pass
 
 
-def add_catalog_indexes(context):
+def add_catalog_indexes(context=None):
     """Add indexes to the portal_catalog. For more information, see
     http://maurits.vanrees.org/weblog/archive/2009/12/catalog.
     """
@@ -44,10 +44,6 @@ def add_catalog_indexes(context):
         extras.index_type = 'Okapi BM25 Rank'
         extras.lexicon_id = 'plone_lexicon'
         return extras
-
-    setup_tool = api.portal.get_tool('portal_setup')
-    profile = 'profile-collective.googlenews:default'
-    setup_tool.runImportStepFromProfile(profile, 'catalog')
 
     catalog = api.portal.get_tool('portal_catalog')
     indexes = catalog.indexes()
@@ -70,16 +66,6 @@ def add_catalog_indexes(context):
     if len(indexables) > 0:
         logger.info('Indexing new indexes {0}.'.format(', '.join(indexables)))
         catalog.manage_reindexIndex(ids=indexables)
-
-
-def import_various(context):
-    """Import step for configuration not handled in XML files."""
-
-    # only run step if a flag file is present
-    if context.readDataFile('collective.googlenews.marker.txt') is None:
-        return
-
-    add_catalog_indexes(context)
 
 
 def add_guard_expressions(context=None):
@@ -105,6 +91,7 @@ def remove_guard_expressions():
 
 def install_post_handler(context):
     """Handler for install steps not handled in XML files."""
+    add_catalog_indexes()
     add_guard_expressions()
 
 
