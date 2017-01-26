@@ -4,27 +4,17 @@ from collective.googlenews.logger import logger
 from collective.googlenews.utils import get_workflows_with_publish_transition
 from plone import api
 from Products.CMFCore.Expression import Expression
-from Products.CMFPlone import interfaces as Plone
-from Products.CMFQuickInstallerTool import interfaces as QuickInstaller
+from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
 
-@implementer(Plone.INonInstallable)
-class HiddenProfiles(object):
+@implementer(INonInstallable)
+class HiddenProfiles(object):  # pragma: no cover
 
     def getNonInstallableProfiles(self):
         """Do not show on Plone's list of installable profiles."""
         return [
             u'collective.googlenews:uninstall',
-        ]
-
-
-@implementer(QuickInstaller.INonInstallable)
-class HiddenProducts(object):
-
-    def getNonInstallableProducts(self):
-        """Do not show on QuickInstaller's list of installable products."""
-        return [
         ]
 
 

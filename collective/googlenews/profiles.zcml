@@ -23,7 +23,6 @@
       />
 
   <utility factory=".setuphandlers.HiddenProfiles" name="collective.googlenews" />
-  <utility factory=".setuphandlers.HiddenProducts" name="collective.googlenews" />
 
 </configure>
 
