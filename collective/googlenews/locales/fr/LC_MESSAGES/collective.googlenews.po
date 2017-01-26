@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-11-27 17:55+0000\n"
+"POT-Creation-Date: 2017-01-26 16:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,16 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.googlenews\n"
 
-#: ./collective/googlenews/behaviors/interfaces.py:52
-msgid "Can't mark this news article as standout. There are already seven marked in the past calendar week."
+#: ./collective/googlenews/behaviors/interfaces.py:74
+msgid "Can't mark this item as standout. There are already 7 items marked in the past calendar week."
 msgstr ""
 
-#: ./collective/googlenews/behaviors/interfaces.py:19
+#: ./collective/googlenews/behaviors/configure.zcml:14
+msgid "Extra fields to get most out of Google News."
+msgstr ""
+
+#: ./collective/googlenews/behaviors/configure.zcml:14
+#: ./collective/googlenews/behaviors/interfaces.py:20
 msgid "Google News"
 msgstr ""
 
@@ -30,7 +35,7 @@ msgstr ""
 msgid "Google News Settings"
 msgstr "Configuration de Google Actualités"
 
-#: ./collective/googlenews/interfaces.py:30
+#: ./collective/googlenews/interfaces.py:31
 msgid "Google News requires Editors' Picks feed logos to follow some <a href=\"{0}\">general guidelines</a>. This image will replace the logo in all Atom feeds on the site."
 msgstr ""
 
@@ -38,47 +43,47 @@ msgstr ""
 msgid "Image should be in PNG format."
 msgstr ""
 
-#: ./collective/googlenews/utils.py:45
+#: ./collective/googlenews/utils.py:42
 msgid "Image should have height beetween 20px and 40px and width equal 250px or height equal 40px and width beetween 125px and 250px."
 msgstr ""
 
-#: ./collective/googlenews/utils.py:54
+#: ./collective/googlenews/utils.py:50
 msgid "Image should have transparency layer."
 msgstr ""
 
-#: ./collective/googlenews/behaviors/interfaces.py:37
+#: ./collective/googlenews/behaviors/interfaces.py:38
 msgid "Keywords"
 msgstr ""
 
-#: ./collective/googlenews/interfaces.py:29
+#: ./collective/googlenews/interfaces.py:30
 msgid "Logo image"
 msgstr ""
 
-#: ./collective/googlenews/interfaces.py:22
+#: ./collective/googlenews/interfaces.py:23
 msgid "Portal types"
 msgstr "Types de contenu"
 
-#: Profile description in configure.zcml
+#: ./collective/googlenews/profiles.zcml:23
 msgid "Removes support for Google News from your site."
 msgstr "Supprimer le support de Google Actualités de votre site"
 
-#: ./collective/googlenews/interfaces.py:23
+#: ./collective/googlenews/interfaces.py:24
 msgid "Select portal types that will be considered news articles."
 msgstr ""
 
-#: ./collective/googlenews/behaviors/interfaces.py:25
+#: ./collective/googlenews/behaviors/interfaces.py:26
 msgid "Standout Journalism"
 msgstr ""
 
-#: Profile title in configure.zcml
+#: ./collective/googlenews/profiles.zcml:14
 msgid "Support for Google News"
 msgstr "Support de Google Actualités"
 
-#: Profile description in configure.zcml
+#: ./collective/googlenews/profiles.zcml:14
 msgid "To include a site in Google News you need to comply with certain technical requirements. This package provides support for this."
 msgstr "Pour ajouter votre site dans Google Actualités il doit être conformes à certaines contraintes techniques. Ce module permet de supporter ces contraintes"
 
-#: Profile title in configure.zcml
+#: ./collective/googlenews/profiles.zcml:23
 msgid "collective.googlenews uninstall"
 msgstr ""
 
@@ -88,12 +93,11 @@ msgid "controlpanel_desc"
 msgstr "Vous pouvez configurer le module collective.googlenews"
 
 #. Default: "Used to specify keywords that are relevant to this news article. Add one phrase or keyword on each line. Implements Google News <code>news_keywords</code> metatag."
-#: ./collective/googlenews/behaviors/interfaces.py:38
+#: ./collective/googlenews/behaviors/interfaces.py:39
 msgid "help_news_keywords"
 msgstr ""
 
 #. Default: "Used to indicate this is a big story, or an extraordinary work of journalism. You can mark as standout no more than seven news articles in the past calendar week. Implements Google News <code>standout</code> metatag."
-#: ./collective/googlenews/behaviors/interfaces.py:26
+#: ./collective/googlenews/behaviors/interfaces.py:27
 msgid "help_standout_journalism"
 msgstr ""
-
