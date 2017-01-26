@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ------------------
 
+- Fix standout journalism validator.
+  [hvelarde]
+
 - Remove dependency on five.grok (closes `#34`_).
   [rodfersou]
 

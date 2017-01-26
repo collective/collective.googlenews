@@ -1,6 +1,7 @@
 # coding: utf-8
 from collective.googlenews import _
-from collective.googlenews.utils import _valid_as_standout_journalism
+from collective.googlenews.utils import get_current_standout_journalism
+from plone import api
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
@@ -47,9 +48,30 @@ class IGoogleNews(model.Schema):
 
     @invariant
     def validate_standout_journalism(data):
-        context = data.__context__  # this will be None when adding
-        if not _valid_as_standout_journalism(context):
+        """Check there are less than 7 published news articles marked
+        as standout journalism in the past calendar week.
+
+        This invariant only takes care of content being edited; content
+        being published is checked within a workflow guard.
+        """
+        context = data.__context__
+        if context is None:
+            return  # adding an item, not editing it
+
+        if not data.standout_journalism:
+            return  # this is not standout journalism
+
+        if api.content.get_state(context) != 'published':
+            return  # item not published yet
+
+        results = get_current_standout_journalism()
+        # there should never be more than 7 items marked as
+        # standout journalism at any given time
+        assert len(results) <= 7
+        # ignore current item if already marked as standout
+        results = [o for o in results if o != context]
+        if len(results) == 7:
             raise Invalid(_(
-                u"Can't mark this news article as standout. "
-                u'There are already seven marked in the past calendar week.'
+                u"Can't mark this item as standout. "
+                u'There are already 7 items marked in the past calendar week.'
             ))

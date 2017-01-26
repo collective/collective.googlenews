@@ -31,17 +31,36 @@ Test CRUD
     Workflow Publish
 
     # we can also edit it
-    Update  World Cup
+    Add Keywords  World Cup
     Page Should Contain  Changes saved
     Page Should Contain Element  xpath=//meta[@name='standout']
     Page Should Contain Element  xpath=//meta[@name='news_keywords']
 
-    # creating a new one will be voided
+    # creating a new one is allowed
     Go to Homepage
     Create  Read all about it!
-    Page Should Contain  There were some errors
-    Page Should Contain  Can't mark this news article as standout
-    Page Should Contain  There are already seven marked in the past calendar week
+    Page Should Contain  Item created
+    Page Should Contain Element  xpath=//meta[@name='standout']
+    Page Should Not Contain Element  xpath=//meta[@name='news_keywords']
+
+    # but no workflow transition is allowed
+    Page Should Not Contain Element  css=#workflow-transition-publish
+    Page Should Contain  This item is marked as standout journalism but there are already 7 items marked and published in the past calendar week.
+    Page Should Contain  The "Publish" workflow transition will be disabled on this item until this situation changes.
+
+    # remove one item from the standout journalism
+    Click Link  Extra! Extra!
+    Click Link  link=Edit
+    Unmark As Standout Journalism
+    Click Button  Save
+
+    # now the transition is available for the other
+    Click Link  Read all about it!
+    Page Should Contain Element  css=#workflow-transition-publish
+    Page Should Not Contain  This item is marked as standout journalism but there are already 7 items marked and published in the past calendar week.
+    Page Should Not Contain  The "Publish" workflow transition will be disabled on this item until this situation changes.
+
+    Workflow Publish
 
     Click Link  Extra! Extra!
     Delete
@@ -53,16 +72,23 @@ Click Add Dexterity Item
     Click Link  css=a#dexterity-item
     Page Should Contain  Dexterity Item
 
+Mark As Standout Journalism
+    Click Link  Google News
+    Select Checkbox  css=${standout_journalism_selector}
+
+Unmark As Standout Journalism
+    Click Link  Google News
+    Unselect Checkbox  css=${standout_journalism_selector}
+
 Create
     [arguments]  ${title}
 
     Click Add Dexterity Item
     Input Text  css=${title_selector}  ${title}
-    Click Link  Google News
-    Select Checkbox  css=${standout_journalism_selector}
+    Mark As Standout Journalism
     Click Button  Save
 
-Update
+Add Keywords
     [arguments]  ${news_keywords}
 
     Click Link  link=Edit

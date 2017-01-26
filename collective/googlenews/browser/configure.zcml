@@ -18,6 +18,14 @@
       layer="collective.googlenews.interfaces.IGoogleNewsLayer"
       />
 
+  <browser:page
+      for="*"
+      name="googlenews-helper"
+      class=".views.GoogleNewsHelper"
+      permission="zope.Public"
+      allowed_attributes="publish_transition_allowed"
+      />
+
   <browser:viewlet
       name="googlenews.meta"
       for="collective.googlenews.behaviors.interfaces.IGoogleNews"
@@ -25,6 +33,16 @@
       class=".viewlets.GoogleNewsMetaTagViewlet"
       layer="collective.googlenews.interfaces.IGoogleNewsLayer"
       template="meta.pt"
+      permission="zope2.View"
+      />
+
+  <browser:viewlet
+      name="googlenews.warning"
+      for="collective.googlenews.behaviors.interfaces.IGoogleNews"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      class=".viewlets.GoogleNewsWarningViewlet"
+      layer="collective.googlenews.interfaces.IGoogleNewsLayer"
+      template="warning.pt"
       permission="zope2.View"
       />
 

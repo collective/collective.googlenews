@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.googlenews import _
+from collective.googlenews.logger import logger
 from cStringIO import StringIO
 from DateTime import DateTime
 from PIL import Image
@@ -51,14 +52,12 @@ def validate_logo(value):
     return True
 
 
-def _valid_as_standout_journalism(context):
-    """Check there are currently less than seven published news articles
-    marked as standout journalism in the past calendar week.
+def get_current_standout_journalism():
+    """Return content currently marked as standout journalism.
 
-    :param context: the object being validated
-    :type context: Dexterity-based content type instance or None
-    :returns: True if we can mark this object as standout journalism
-    :rtype: bool
+    :returns: a list of objects marked as standout journalism
+    :rtype: list of content type instances
+    :raises AssertionError: if there are more than 7 items
     """
     record = 'collective.googlenews.interfaces.GoogleNewsSettings.portal_types'
     portal_types = api.portal.get_registry_record(record)
@@ -70,22 +69,17 @@ def _valid_as_standout_journalism(context):
         review_state='published',
     )
     results = catalog(**query)
+    msg = 'There are currently {0} items marked as standout'
+    logger.info(msg.format(len(results)))
+    logger.info(repr([b.id for b in results]))
+    return [b.getObject() for b in results]
 
-    # to validate, we will need a list of object UUIDs
-    results = [b.getObject() for b in results]
-    results = [api.content.get_uuid(o) for o in results]
 
-    # we could have false positives if we are editing an item already marked
-    if context is not None:  # we are not adding, but editing
-        uuid = api.content.get_uuid(context)
-        if uuid in results:  # if the UUID is there, ignore it
-            results.remove(uuid)
-
-    # XXX: there's still a potential source of problems here:
-    #      suppose we have six news articles marked as standout and we
-    #      create another two; as they are not published yet, both can
-    #      be marked and published after that.
-    #      so, we ended with eight news articles marked as standout.
-    #      we should work with workflow scripts to avoid that.
-
-    return len(results) < 7
+def get_workflows_with_publish_transition():
+    wf_tool = api.portal.get_tool('portal_workflow')
+    workflows = []
+    for id_ in wf_tool.listWorkflows():
+        wf = wf_tool.getWorkflowById(id_)
+        if 'publish' in wf.transitions:
+            workflows.append(wf)
+    return workflows

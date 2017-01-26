@@ -1,0 +1,9 @@
+<dl class="portalMessage warning" tal:condition="view/enabled">
+  <dt i18n:translate="">
+    Warning
+  </dt>
+  <dd i18n:translate="">
+    This item is marked as standout journalism but there are already 7 items marked and published in the past calendar week.
+    The "Publish" workflow transition will be disabled on this item until this situation changes.
+  </dd>
+</dl>

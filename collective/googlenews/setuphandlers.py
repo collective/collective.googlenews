@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+from collective.googlenews.config import GUARD_EXPRESSION
 from collective.googlenews.logger import logger
+from collective.googlenews.utils import get_workflows_with_publish_transition
 from plone import api
+from Products.CMFCore.Expression import Expression
 from Products.CMFPlone import interfaces as Plone
 from Products.CMFQuickInstallerTool import interfaces as QuickInstaller
 from zope.interface import implementer
@@ -77,3 +80,34 @@ def import_various(context):
         return
 
     add_catalog_indexes(context)
+
+
+def add_guard_expressions(context=None):
+    """Add guard expression to all workflows with "publish" transition."""
+    for wf in get_workflows_with_publish_transition():
+        guard = wf.transitions['publish'].guard
+        if guard.getExprText() == '':
+            guard.expr = Expression(GUARD_EXPRESSION)
+            logger.info('Guard expression added to {0} workflow'.format(wf.id))
+        else:
+            msg = 'Guard expression not added to {0} workflow (current value is "{1}")'
+            logger.warn(msg.format(wf.id, guard.getExprText()))
+
+
+def remove_guard_expressions():
+    """Remove guard expression from all workflows with "publish" transition."""
+    for wf in get_workflows_with_publish_transition():
+        guard = wf.transitions['publish'].guard
+        if guard.getExprText() == GUARD_EXPRESSION:
+            guard.expr = None
+            logger.info('Guard expression removed from {0} workflow'.format(wf.id))
+
+
+def install_post_handler(context):
+    """Handler for install steps not handled in XML files."""
+    add_guard_expressions()
+
+
+def uninstall_post_handler(context):
+    """Handler for uninstall steps not handled in XML files."""
+    remove_guard_expressions()

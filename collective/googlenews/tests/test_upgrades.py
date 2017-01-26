@@ -83,3 +83,33 @@ class Upgrade1001to1002TestCase(UpgradeTestCaseBase):
         self.assertIn('news_keywords', catalog.Indexes)
         self.assertIn('standout_journalism', catalog.schema())
         self.assertIn('news_keywords', catalog.schema())
+
+
+class Upgrade1002to1003TestCase(UpgradeTestCaseBase):
+
+    def setUp(self):
+        UpgradeTestCaseBase.setUp(self, u'1002', u'1003')
+
+    def test_upgrade_to_1003_registrations(self):
+        version = self.setup.getLastVersionForProfile(PROFILE)[0]
+        assert int(version) >= int(self.to_version)
+        self.assertEqual(self._how_many_upgrades_to_do(), 1)
+
+    def test_update_portal_catalog(self):
+        # check if the upgrade step is registered
+        title = u'Add guard expressions'
+        step = self._get_upgrade_step(title)
+        assert step is not None
+
+        # simulate state on previous version
+        from collective.googlenews.config import GUARD_EXPRESSION
+        from collective.googlenews.setuphandlers import remove_guard_expressions
+        from collective.googlenews.utils import get_workflows_with_publish_transition
+        remove_guard_expressions()
+        for wf in get_workflows_with_publish_transition():
+            assert wf.transitions['publish'].guard.getExprText() == ''
+
+        # run the upgrade step to validate the update
+        self._do_upgrade_step(step)
+        for wf in get_workflows_with_publish_transition():
+            self.assertEqual(wf.transitions['publish'].guard.getExprText(), GUARD_EXPRESSION)

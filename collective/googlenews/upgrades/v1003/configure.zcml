@@ -1,0 +1,17 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+      source="1002"
+      destination="1003"
+      profile="collective.googlenews:default">
+
+    <genericsetup:upgradeStep
+        title="Add guard expressions"
+        description="Add guard expression to all workflows with 'publish' transition."
+        handler="collective.googlenews.setuphandlers.add_guard_expressions"
+        />
+
+  </genericsetup:upgradeSteps>
+
+</configure>
