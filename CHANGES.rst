@@ -4,6 +4,9 @@ Changelog
 2.0b3 (unreleased)
 ------------------
 
+- Package clean up; useless code related with initial upgrade step was removed.
+  [hvelarde]
+
 - Fix standout journalism validator.
   [hvelarde]
 
