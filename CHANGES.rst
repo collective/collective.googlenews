@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0b3 (unreleased)
+2.0b3 (2017-01-26)
 ------------------
 
 - Package clean up; useless code related with initial upgrade step was removed.
